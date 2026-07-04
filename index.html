@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimized Title -->
+    <title>بازار بلوک • فروشگاه ماینکرافتی | دانلود پلاگین و مود ماینکرافت 1.21 | خورشید آبی</title>
+    
+    <!-- Powerful SEO Meta Description -->
+    <meta name="description" content="بازار بلوک (خورشید آبی) - بهترین فروشگاه ماینکرافتی برای دانلود پلاگین و مود ماینکرافت. ۳۰ پلاگین و مود منتخب و تأییدشده برای نسخه ۱.۲۱. دانلود فوری EssentialsX، LuckPerms، Sodium، Create و ده‌ها مود و پلاگین محبوب دیگر.">
+    
+    <!-- Keywords - Persian + English Minecraft SEO -->
+    <meta name="keywords" content="بازار بلوک, بلوک بازار, فروشگاه ماینکرافت, فروشگاه ماینکرافتی, دانلود پلاگین ماینکرافت, دانلود مود ماینکرافت, پلاگین ماینکرافت 1.21, مود ماینکرافت 1.21, دانلود پلاگین ماینکرافت رایگان, مود ماینکرافت, EssentialsX, LuckPerms, WorldEdit, Sodium, Iris Shaders, Create Mod, پلاگین سرور ماینکرافت, مود کلاینت ماینکرافت, بازار پلاگین ماینکرافت">
+    
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:title" content="بازار بلوک • فروشگاه ماینکرافتی | دانلود پلاگین و مود ماینکرافت">
+    <meta property="og:description" content="بهترین فروشگاه ماینکرافتی برای دانلود پلاگین و مود. ۳۰ آیتم منتخب، فوری و امن. بازار بلوک - خورشید آبی.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:site_name" content="بازار بلوک | BlueSun Block Bazaar">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="بازار بلوک • دانلود پلاگین و مود ماینکرافت">
+    <meta name="twitter:description" content="فروشگاه ماینکرافتی برای دانلود پلاگین و مود. منتخب، معتبر و فوری.">
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="Block Bazaar Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --emerald: #10b981;
+            --amber: #f59e0b;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .minecraft-block {
+            image-rendering: pixelated;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 
+                       0 4px 6px -4px rgb(0 0 0 / 0.3);
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .product-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #374151;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-color: #10b981;
+        }
+
+        .nav-active {
+            color: #10b981;
+            border-bottom: 2px solid #10b981;
+        }
+
+        .block-border {
+            border-image: linear-gradient(#374151, #1f2937) 1;
+        }
+
+        .bazaar-tab {
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .bazaar-tab.active {
+            background-color: #111827;
+            color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .bazaar-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #10b981, #34d399);
+        }
+
+        .modal {
+            animation: modalPop 0.2s ease-out forwards;
+        }
+
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 0.75rem 1rem;
+            border-radius: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chat-user {
+            background-color: #10b981;
+            color: white;
+            border-bottom-right-radius: 0.25rem;
+            margin-left: auto;
+        }
+
+        .chat-bot {
+            background-color: #1f2937;
+            color: #e5e7eb;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        .minecraft-text {
+            text-shadow: 2px 2px 0 #00000030;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .filter-active {
+            background-color: #10b981;
+            color: white;
+            border-color: #10b981;
+        }
+
+        .three-container {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+
+        .product-badge {
+            font-size: 0.65rem;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        .store-grid {
+            scrollbar-width: thin;
+            scrollbar-color: #374151 #111827;
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data for SEO (Rich Results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://blockbazaar.dev/#organization",
+          "name": "بازار بلوک | خورشید آبی",
+          "alternateName": ["Block Bazaar", "BlueSun Block Bazaar", "فروشگاه ماینکرافتی بازار بلوک"],
+          "url": "https://blockbazaar.dev",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://blockbazaar.dev/logo.png"
+          },
+          "description": "بهترین فروشگاه ماینکرافتی برای دانلود پلاگین و مود ماینکرافت. ۳۰ پلاگین و مود منتخب و تأییدشده.",
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://blockbazaar.dev/#website",
+          "url": "https://blockbazaar.dev",
+          "name": "بازار بلوک • فروشگاه ماینکرافتی",
+          "description": "دانلود پلاگین و مود ماینکرافت - بازار بلوک (خورشید آبی)",
+          "publisher": {
+            "@id": "https://blockbazaar.dev/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://blockbazaar.dev/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://blockbazaar.dev/#webpage",
+          "url": "https://blockbazaar.dev",
+          "name": "بازار بلوک • دانلود پلاگین و مود ماینکرافت 1.21",
+          "description": "فروشگاه ماینکرافتی برای دانلود پلاگین و مود. EssentialsX, LuckPerms, Sodium, Create و ده‌ها مود و پلاگین محبوب.",
+          "isPartOf": {
+            "@id": "https://blockbazaar.dev/#website"
+          },
+          "about": {
+            "@id": "https://blockbazaar.dev/#organization"
+          },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "خانه",
+                "item": "https://blockbazaar.dev"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "فروشگاه",
+                "item": "https://blockbazaar.dev#store"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ItemList",
+          "name": "پلاگین‌ها و مودهای منتخب بازار بلوک",
+          "description": "لیست پلاگین و مودهای ماینکرافت موجود در فروشگاه",
+          "numberOfItems": 30,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "EssentialsX",
+                "applicationCategory": "GameApplication",
+                "operatingSystem": "Minecraft 1.21.x"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Sodium",
+                "applicationCategory": "GameApplication",
+                "operatingSystem": "Minecraft 1.21.3"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Create",
+                "applicationCategory": "GameApplication",
+                "operatingSystem": "Minecraft 1.21.x"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-[#0A0F1C] text-[#E0E7FF] min-h-screen">
+    <!-- NAV -->
+    <nav class="sticky top-0 z-50 bg-[#0A0F1C]/95 backdrop-blur-lg border-b border-[#1F2937]">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-6 md:px-8 py-4 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 md:w-11 md:h-11 bg-gradient-to-br from-[#10b981] to-[#34d399] flex items-center justify-center rounded-xl shadow-inner relative">
+                        <i class="fa-solid fa-cube text-white text-2xl md:text-3xl"></i>
+                        <div class="absolute -top-1 -right-1 w-3.5 h-3.5 md:w-4 md:h-4 bg-[#F59E0B] rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-store text-[9px] md:text-[10px] text-[#0A0F1C]"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-display text-2xl md:text-3xl font-bold tracking-tighter">بازار بلوک</div>
+                        <div class="text-[9px] md:text-[10px] text-[#64748B] -mt-1 tracking-[1.5px]">BLOCK BAZAAR</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm">
+                    <a href="#discover" class="hover:text-[#10b981] transition-colors nav-link" data-fa="کشف کنید" data-en="Discover">کشف کنید</a>
+                    <a href="#store" class="hover:text-[#10b981] transition-colors nav-link" data-fa="فروشگاه" data-en="Store">فروشگاه</a>
+                    <a href="#library" onclick="showLibrary()" class="hover:text-[#10b981] transition-colors nav-link" data-fa="کتابخانه من" data-en="Library">کتابخانه من</a>
+                </div>
+
+                <!-- Right side -->
+                <div class="flex items-center gap-x-2 md:gap-x-4">
+                    <!-- Search -->
+                    <div class="hidden md:block relative w-64 lg:w-72">
+                        <input id="global-search" 
+                               type="text" 
+                               placeholder="جستجوی پلاگین و مود..." 
+                               onkeyup="filterProducts()"
+                               class="w-full bg-[#111827] border border-[#374151] text-sm rounded-2xl pl-10 py-2.5 focus:outline-none focus:border-[#10b981] placeholder:text-[#64748B]">
+                        <i class="fa-solid fa-search absolute left-4 top-3.5 text-[#64748B]"></i>
+                    </div>
+
+                    <!-- Language Switcher -->
+                    <div class="flex items-center bg-[#111827] border border-[#374151] rounded-2xl p-1 text-xs font-medium">
+                        <button onclick="switchLanguage('fa')" id="lang-fa"
+                                class="px-3 py-1 rounded-xl transition-all lang-btn active">FA</button>
+                        <button onclick="switchLanguage('en')" id="lang-en"
+                                class="px-3 py-1 rounded-xl transition-all lang-btn text-[#64748B]">EN</button>
+                    </div>
+
+                    <!-- User / Login -->
+                    <div id="nav-user-area">
+                        <button onclick="showLoginModal()" 
+                                class="flex items-center gap-x-2 px-4 md:px-5 py-2 text-sm font-medium bg-[#111827] hover:bg-[#1F2937] border border-[#374151] rounded-2xl transition-all active:scale-[0.985]">
+                            <i class="fa-solid fa-user mr-1.5 md:mr-2"></i>
+                            <span class="hidden sm:inline" data-lang="login">ورود</span>
+                        </button>
+                    </div>
+
+                    <!-- Support Chat Button -->
+                    <button onclick="openChat()"
+                            class="flex items-center gap-x-2 px-3 md:px-4 py-2 text-sm font-medium bg-[#1F2937] hover:bg-[#10b981] hover:text-white border border-[#374151] hover:border-[#10b981] rounded-2xl transition-all active:scale-[0.985]">
+                        <i class="fa-solid fa-headset"></i>
+                        <span class="hidden md:inline" data-lang="support">پشتیبانی</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO with 3D -->
+    <section id="discover" class="max-w-screen-2xl mx-auto px-5 md:px-8 pt-8 md:pt-12 pb-12 md:pb-16">
+        <div class="grid lg:grid-cols-12 gap-6 md:gap-8 items-center">
+            <!-- Text Content -->
+            <div class="lg:col-span-7 xl:pr-12">
+                <div class="inline-flex items-center gap-x-2 px-3 md:px-4 py-1.5 bg-[#111827] border border-[#374151] rounded-3xl text-xs tracking-widest mb-5 md:mb-6">
+                    <div class="w-2 h-2 bg-[#10b981] rounded-full animate-pulse"></div>
+                    <span class="font-medium">پشتیبانی از ۱.۲۱.۳ و ۱.۲۱.۴</span>
+                </div>
+                
+                <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tighter font-bold mb-5 md:mb-6">
+                    دنیای خودت.<br>
+                    <span class="bg-gradient-to-r from-[#10b981] via-[#34d399] to-[#10b981] bg-clip-text text-transparent">دوباره ساخته شد.</span>
+                </h1>
+                
+                <p class="max-w-lg text-lg md:text-xl text-[#94A3B8] mb-7 md:mb-8">
+                    بازار متمایز پلاگین‌ها و مودهای ماینکرافت.<br class="hidden md:block">
+                 ساخته شده توسط  <span style="color:rgb(0, 132, 255);"> خورشید ابی </span> 
+                </p>
+
+                <div class="flex flex-wrap gap-3 md:gap-4">
+                    <button onclick="document.getElementById('store').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-6 md:px-8 py-3.5 md:py-4 bg-[#10b981] hover:bg-[#34d399] text-[#0A0F1C] font-semibold rounded-3xl flex items-center gap-x-3 transition-all active:scale-[0.985] shadow-lg shadow-[#10b981]/30 text-sm md:text-base">
+                        <span>گشت‌وگذار در بازار</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <button onclick="openChat()" 
+                            class="px-6 md:px-8 py-3.5 md:py-4 border border-[#374151] hover:bg-[#111827] font-medium rounded-3xl flex items-center gap-x-3 transition-all text-sm md:text-base">
+                        <i class="fa-solid fa-comments"></i>
+                        <span>گفتگو با پشتیبانی</span>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-x-8 mt-10 text-sm">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 bg-[#1F2937] border border-[#374151] rounded-full overflow-hidden"><img src="https://i.pravatar.cc/32?img=12" class="w-full h-full object-cover"></div>
+                        <div class="w-8 h-8 bg-[#1F2937] border border-[#374151] rounded-full overflow-hidden"><img src="https://i.pravatar.cc/32?img=28" class="w-full h-full object-cover"></div>
+                        <div class="w-8 h-8 bg-[#1F2937] border border-[#374151] rounded-full overflow-hidden"><img src="https://i.pravatar.cc/32?img=47" class="w-full h-full object-cover"></div>
+                    </div>
+                    <div class="text-[#64748B]">
+                        <span class="font-semibold text-white">67</span> crafters joined this month
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Hero Block -->
+            <div class="lg:col-span-5">
+                <div class="three-container bg-[#111827] border border-[#374151] rounded-3xl p-1.5 md:p-2 shadow-2xl w-full max-w-[380px] mx-auto lg:mx-0">
+                    <canvas id="hero-canvas" class="w-full aspect-square max-h-[260px] sm:max-h-[300px] md:max-h-[380px] lg:max-h-none rounded-2xl cursor-grab active:cursor-grabbing" width="560" height="560"></canvas>
+                </div>
+                <div class="text-center mt-3 text-xs text-[#64748B] flex items-center justify-center gap-x-2">
+                    <i class="fa-solid fa-hand-paper"></i>
+                    <span>Drag to rotate • Your world starts here</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="border-y border-[#1F2937] bg-[#111827]">
+        <div class="max-w-screen-2xl mx-auto px-8 py-6 grid grid-cols-2 md:grid-cols-4 gap-y-6 text-center">
+            <div>
+                <div class="text-4xl font-semibold stat-number">3k</div>
+                <div class="text-[#64748B] text-sm tracking-wider mt-1">TOTAL DOWNLOADS</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold stat-number">30</div>
+                <div class="text-[#64748B] text-sm tracking-wider mt-1">PLUGINS &amp; MODS</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold stat-number">we dont know</div>
+                <div class="text-[#64748B] text-sm tracking-wider mt-1">ACTIVE SERVERS</div>
+            </div>
+            <div>
+                <div class="text-4xl font-semibold stat-number">4.87</div>
+                <div class="text-[#64748B] text-sm tracking-wider mt-1">AVERAGE RATING</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STORE SECTION -->
+    <section id="store" class="max-w-screen-2xl mx-auto px-8 pt-14 pb-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-8 gap-y-4">
+            <div>
+                <div class="uppercase tracking-[3px] text-xs font-semibold text-[#10b981]">CURATED • VERIFIED • INSTANT</div>
+                <h2 class="section-header tracking-tighter">The Bazaar</h2>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="flex bg-[#111827] border border-[#374151] rounded-3xl p-1 w-fit">
+                <button onclick="switchTab('plugin')" id="tab-plugin"
+                        class="bazaar-tab active px-7 py-2 text-sm font-semibold rounded-[2rem] flex items-center gap-x-2">
+                    <i class="fa-solid fa-plug"></i>
+                    <span>Plugins <span class="font-mono text-xs opacity-60" id="plugin-count">(15)</span></span>
+                </button>
+                <button onclick="switchTab('mod')" id="tab-mod"
+                        class="bazaar-tab px-7 py-2 text-sm font-semibold rounded-[2rem] flex items-center gap-x-2">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <span>Mods <span class="font-mono text-xs opacity-60" id="mod-count">(15)</span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-3 mb-4 items-center">
+            <div class="flex-1 min-w-[220px]">
+                <input id="search-input" type="text" placeholder="Search by name, author or description..." 
+                       onkeyup="filterProducts()"
+                       class="w-full bg-[#111827] border border-[#374151] rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-[#10b981]">
+            </div>
+            
+            <select id="version-filter" onchange="filterProducts()" 
+                    class="bg-[#111827] border border-[#374151] rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-[#10b981]">
+                <option value="">All Versions</option>
+                <option value="1.21.x">1.21.x</option>
+                <option value="1.21.3">1.21.3</option>
+                <option value="1.20.x">1.20.x</option>
+            </select>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="flex flex-wrap gap-2 mb-6" id="category-pills">
+            <button onclick="filterByCategory('')" class="category-pill active px-4 py-1.5 text-xs font-medium border border-[#374151] rounded-2xl hover:bg-[#1F2937] transition-colors bg-[#10b981] text-white">همه</button>
+            <button onclick="filterByCategory('Performance')" class="category-pill px-4 py-1.5 text-xs font-medium border border-[#374151] rounded-2xl hover:bg-[#1F2937] transition-colors">Performance</button>
+            <button onclick="filterByCategory('Utility')" class="category-pill px-4 py-1.5 text-xs font-medium border border-[#374151] rounded-2xl hover:bg-[#1F2937] transition-colors">Utility</button>
+            <button onclick="filterByCategory('World')" class="category-pill px-4 py-1.5 text-xs font-medium border border-[#374151] rounded-2xl hover:bg-[#1F2937] transition-colors">World</button>
+            <button onclick="filterByCategory('Automation')" class="category-pill px-4 py-1.5 text-xs font-medium border border-[#374151] rounded-2xl hover:bg-[#1F2937] transition-colors">Automation</button>
+            <button onclick="filterByCategory('Visuals')" class="category-pill px-4 py-1.5 text-xs font-medium border border-[#374151] rounded-2xl hover:bg-[#1F2937] transition-colors">Visuals</button>
+            <button onclick="filterByCategory('Protection')" class="category-pill px-4 py-1.5 text-xs font-medium border border-[#374151] rounded-2xl hover:bg-[#1F2937] transition-colors">Protection</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 md:gap-5 store-grid">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- MY LIBRARY (hidden by default, shown when logged in) -->
+    <section id="library-section" class="max-w-screen-2xl mx-auto px-8 pb-20 hidden">
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h3 class="font-display text-3xl tracking-tight">Your Library</h3>
+                <p class="text-[#64748B]">All your purchased and downloaded items in one place</p>
+            </div>
+            <button onclick="hideLibrary()" class="text-sm px-4 py-2 text-[#64748B] hover:text-white flex items-center gap-x-2">
+                <i class="fa-solid fa-times"></i> Close
+            </button>
+        </div>
+        <div id="library-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <!-- Populated dynamically -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-[#1F2937] bg-[#111827]">
+        <div class="max-w-screen-2xl mx-auto px-8 py-10 text-sm text-[#64748B]">
+            <div class="flex flex-col md:flex-row justify-between gap-y-6">
+                <div>
+                    <div class="flex items-center gap-x-2 mb-3">
+                        <div class="w-6 h-6 bg-[#10b981] rounded flex items-center justify-center">
+                            <i class="fa-solid fa-cube text-white text-xs"></i>
+                        </div>
+                        <span class="font-semibold text-white">Block Bazaar</span>
+                    </div>
+                    <div>© 2026 Block Bazaar. Not affiliated with Mojang or Microsoft.</div>
+                </div>
+                <div class="flex gap-x-8 text-xs">
+                    <div>Trust &amp; Safety</div>
+                    <div>Creator Program</div>
+                    <div>API</div>
+                    <div>Status</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="product-modal" onclick="if (event.target.id === 'product-modal') closeProductModal()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-[#111827] border border-[#374151] w-full max-w-2xl rounded-3xl overflow-hidden modal">
+            <div class="p-8">
+                <div class="flex justify-between items-start">
+                    <div id="modal-header" class="flex-1"></div>
+                    <button onclick="closeProductModal()" class="text-[#64748B] hover:text-white text-2xl leading-none">×</button>
+                </div>
+                
+                <div id="modal-body" class="mt-6 text-[#CBD5E1]">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+            
+            <div class="bg-[#0A0F1C] px-8 py-5 flex items-center justify-between border-t border-[#374151]">
+                <div id="modal-price" class="font-semibold text-xl"></div>
+                <div class="flex gap-x-3" id="modal-actions">
+                    <!-- Dynamic buttons -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN / REGISTER MODAL -->
+    <div id="login-modal" onclick="if (event.target.id === 'login-modal') closeLoginModal()" class="hidden fixed inset-0 bg-black/70 z-[110] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-[#111827] border border-[#374151] w-full max-w-md rounded-3xl overflow-hidden modal">
+            <!-- Tabs -->
+            <div class="flex border-b border-[#374151]">
+                <button onclick="switchAuthTab('login')" id="auth-tab-login"
+                        class="flex-1 py-4 font-semibold text-sm border-b-2 border-[#10b981] text-white">Login</button>
+                <button onclick="switchAuthTab('register')" id="auth-tab-register"
+                        class="flex-1 py-4 font-semibold text-sm text-[#64748B]">Create Account</button>
+            </div>
+            
+            <div class="p-8">
+                <!-- Login Form -->
+                <div id="login-form">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-xs tracking-wider text-[#64748B] block mb-1.5">EMAIL OR USERNAME</label>
+                            <input id="login-email" type="text" value="steve@blockbazaar.dev" class="w-full bg-[#0A0F1C] border border-[#374151] rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#10b981]">
+                        </div>
+                        <div>
+                            <label class="text-xs tracking-wider text-[#64748B] block mb-1.5">PASSWORD</label>
+                            <input id="login-password" type="password" value="demo123" class="w-full bg-[#0A0F1C] border border-[#374151] rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#10b981]">
+                        </div>
+                    </div>
+                    <button onclick="performLogin()" 
+                            class="mt-6 w-full py-3.5 bg-[#10b981] hover:bg-[#34d399] text-[#0A0F1C] font-bold rounded-3xl transition-all">
+                        Sign In
+                    </button>
+                    <div class="text-center text-xs text-[#64748B] mt-4">Demo mode • Any credentials work</div>
+                </div>
+
+                <!-- Register Form -->
+                <div id="register-form" class="hidden">
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-xs tracking-wider text-[#64748B] block mb-1.5">IN-GAME NAME</label>
+                                <input id="reg-ign" type="text" value="BlockMaster42" class="w-full bg-[#0A0F1C] border border-[#374151] rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#10b981]">
+                            </div>
+                            <div>
+                                <label class="text-xs tracking-wider text-[#64748B] block mb-1.5">EMAIL</label>
+                                <input id="reg-email" type="email" value="newcrafter@blockbazaar.dev" class="w-full bg-[#0A0F1C] border border-[#374151] rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#10b981]">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-xs tracking-wider text-[#64748B] block mb-1.5">PASSWORD</label>
+                            <input id="reg-password" type="password" value="demo123" class="w-full bg-[#0A0F1C] border border-[#374151] rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-[#10b981]">
+                        </div>
+                    </div>
+                    <button onclick="performRegister()" 
+                            class="mt-6 w-full py-3.5 bg-[#10b981] hover:bg-[#34d399] text-[#0A0F1C] font-bold rounded-3xl transition-all">
+                        Create Account &amp; Join
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAT MODAL / PANEL -->
+    <div id="chat-panel" class="hidden fixed bottom-4 left-4 right-4 md:bottom-6 md:right-6 md:left-auto w-auto md:w-full max-w-none md:max-w-sm z-[200] bg-[#111827] border border-[#374151] rounded-3xl shadow-2xl overflow-hidden flex flex-col" style="height: min(520px, 85vh);">
+        <div class="bg-[#0A0F1C] px-5 py-4 flex items-center justify-between border-b border-[#374151]">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-[#10b981] rounded-2xl flex items-center justify-center relative">
+                    <i class="fa-solid fa-user-tie text-white"></i>
+                    <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-[#10b981] border-2 border-[#111827] rounded-full"></div>
+                </div>
+                <div>
+                    <div class="font-semibold">Block Bazaar Support</div>
+                    <div class="text-[10px] text-[#10b981] flex items-center gap-x-1">
+                        <i class="fa-solid fa-circle text-[8px]"></i> 
+                        <span>Online • Usually replies instantly</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="closeChat()" class="text-[#64748B] hover:text-white text-xl leading-none">×</button>
+        </div>
+        
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-sm bg-[#0A0F1C]">
+            <!-- Messages populated by JS -->
+        </div>
+        
+        <div class="p-3 border-t border-[#374151] bg-[#111827]">
+            <div class="flex gap-2 mb-2 flex-wrap" id="quick-replies">
+                <!-- Quick buttons populated in JS -->
+            </div>
+            <div class="flex gap-x-2">
+                <input id="chat-input" type="text" placeholder="Type your message..." 
+                       onkeypress="if (event.key === 'Enter') sendChatMessage()"
+                       class="flex-1 bg-[#0A0F1C] border border-[#374151] text-sm rounded-2xl px-4 py-3 focus:outline-none focus:border-[#10b981]">
+                <button onclick="sendChatMessage()" 
+                        class="px-5 bg-[#10b981] text-[#0A0F1C] rounded-2xl font-bold flex items-center justify-center">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[200] flex flex-col gap-y-2 items-center"></div>
+
+    <script>
+        // Tailwind script
+        function initTailwind() {
+            document.documentElement.style.setProperty('--accent', '#10b981');
+            
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            'display': ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif']
+                        }
+                    }
+                }
+            };
+        }
+
+        // ==================== 3D HERO BLOCK ====================
+        let scene, camera, renderer, cube, smallCubes = [];
+        let isDragging = false;
+        let previousMouseX = 0;
+        let previousMouseY = 0;
+        let targetRotationX = 0.4;
+        let targetRotationY = 0.6;
+
+        function initThreeJS() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+
+            renderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                antialias: true, 
+                alpha: true,
+                powerPreference: "high-performance"
+            });
+            
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+
+            scene = new THREE.Scene();
+            
+            camera = new THREE.PerspectiveCamera(52, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+            camera.position.set(0, 0.8, 3.8);
+            camera.lookAt(0, 0.3, 0);
+
+            // Lights
+            const ambient = new THREE.AmbientLight(0x404040, 0.8);
+            scene.add(ambient);
+            
+            const pointLight = new THREE.PointLight(0x10b981, 1.2, 100);
+            pointLight.position.set(3, 5, 4);
+            scene.add(pointLight);
+            
+            const pointLight2 = new THREE.PointLight(0xf59e0b, 0.6, 100);
+            pointLight2.position.set(-4, 2, -3);
+            scene.add(pointLight2);
+
+            // TNT Block (Minecraft style) - Click to explode & reload site!
+            const geometry = new THREE.BoxGeometry(2.2, 2.2, 2.2);
+            
+            // TNT materials: red sides with white accents, lighter top
+            const tntRed = new THREE.MeshPhongMaterial({ color: 0xc41e1e, shininess: 8 });
+            const tntWhite = new THREE.MeshPhongMaterial({ color: 0xfefce8, shininess: 15 });
+            const tntTop = new THREE.MeshPhongMaterial({ color: 0xb91c1c, shininess: 6 });
+            
+            const materials = [
+                tntRed,   // right
+                tntRed,   // left
+                tntTop,   // top
+                tntRed,   // bottom
+                tntRed,   // front
+                tntRed    // back
+            ];
+            
+            cube = new THREE.Mesh(geometry, materials);
+            
+            // Add white "TNT" text simulation using small boxes (simple pattern)
+            const stripeGeo = new THREE.BoxGeometry(2.25, 0.25, 2.25);
+            const stripeMat = new THREE.MeshPhongMaterial({ color: 0xfefce8 });
+            
+            // Horizontal white stripes on sides (TNT pattern)
+            const stripe1 = new THREE.Mesh(stripeGeo, stripeMat);
+            stripe1.position.y = 0.6;
+            cube.add(stripe1);
+            
+            const stripe2 = new THREE.Mesh(stripeGeo, stripeMat);
+            stripe2.position.y = -0.6;
+            cube.add(stripe2);
+            
+            // Small fuse on top
+            const fuseGeo = new THREE.CylinderGeometry(0.08, 0.08, 0.6, 8);
+            const fuseMat = new THREE.MeshPhongMaterial({ color: 0xf59e0b });
+            const fuse = new THREE.Mesh(fuseGeo, fuseMat);
+            fuse.position.y = 1.35;
+            fuse.rotation.x = 0.3;
+            cube.add(fuse);
+            cube.castShadow = true;
+            cube.receiveShadow = true;
+            scene.add(cube);
+
+            // Small floating "items" around the block (emerald, gold, book)
+            const smallGeo = new THREE.BoxGeometry(0.45, 0.45, 0.45);
+            
+            const colors = [0x10b981, 0xf59e0b, 0x6366f1, 0xec4899];
+            
+            for (let i = 0; i < 5; i++) {
+                const mat = new THREE.MeshPhongMaterial({ 
+                    color: colors[i % colors.length], 
+                    shininess: 30,
+                    emissive: colors[i % colors.length],
+                    emissiveIntensity: 0.1
+                });
+                const small = new THREE.Mesh(smallGeo, mat);
+                
+                const angle = (i / 5) * Math.PI * 2;
+                const radius = 2.8;
+                small.position.x = Math.cos(angle) * radius;
+                small.position.z = Math.sin(angle) * radius * 0.6;
+                small.position.y = Math.sin(i) * 0.8 + 0.5;
+                
+                small.userData = { 
+                    angle: angle, 
+                    radius: radius, 
+                    speed: 0.4 + Math.random() * 0.3,
+                    floatOffset: Math.random() * Math.PI * 2
+                };
+                
+                scene.add(small);
+                smallCubes.push(small);
+            }
+
+            // Subtle edge lines for blocky feel
+            const edges = new THREE.EdgesGeometry(geometry);
+            const lineMat = new THREE.LineBasicMaterial({ color: 0x111827, linewidth: 2 });
+            const wireframe = new THREE.LineSegments(edges, lineMat);
+            cube.add(wireframe);
+
+            // Event listeners for drag
+            canvas.addEventListener('mousedown', onMouseDown);
+            canvas.addEventListener('mousemove', onMouseMove);
+            canvas.addEventListener('mouseup', onMouseUp);
+            canvas.addEventListener('mouseleave', onMouseUp);
+            
+            // Touch support
+            canvas.addEventListener('touchstart', onTouchStart, { passive: false });
+            canvas.addEventListener('touchmove', onTouchMove, { passive: false });
+            canvas.addEventListener('touchend', onTouchEnd);
+
+            // TNT Click = Explode + Reload site (fun feature!)
+            canvas.addEventListener('click', () => {
+                if (cube && !isDragging) {
+                    explodeTNT();
+                }
+            });
+
+            // Handle resize
+            window.addEventListener('resize', () => {
+                if (!canvas || !renderer || !camera) return;
+                renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+                camera.aspect = canvas.offsetWidth / canvas.offsetHeight;
+                camera.updateProjectionMatrix();
+            });
+
+            // Initial rotation
+            cube.rotation.x = targetRotationX;
+            cube.rotation.y = targetRotationY;
+
+            // Animation loop
+            animateThreeJS();
+
+            // Reduced motion support
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                cube.rotation.x = 0.35;
+                cube.rotation.y = 0.5;
+            }
+        }
+
+        function animateThreeJS() {
+            requestAnimationFrame(animateThreeJS);
+            
+            if (!cube || !renderer || !scene || !camera) return;
+
+            // Gentle idle rotation if not dragging
+            if (!isDragging && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                targetRotationY += 0.0018;
+            }
+
+            // Smooth interpolation
+            cube.rotation.x = THREE.MathUtils.lerp(cube.rotation.x, targetRotationX, 0.08);
+            cube.rotation.y = THREE.MathUtils.lerp(cube.rotation.y, targetRotationY, 0.08);
+
+            // Animate floating small cubes
+            const time = Date.now() * 0.001;
+            smallCubes.forEach((small, index) => {
+                if (!small.userData) return;
+                const data = small.userData;
+                const newAngle = data.angle + time * data.speed * 0.3;
+                
+                small.position.x = Math.cos(newAngle) * data.radius;
+                small.position.z = Math.sin(newAngle) * data.radius * 0.55;
+                small.position.y = Math.sin(time * 1.6 + data.floatOffset) * 0.6 + 0.9;
+                
+                small.rotation.x = time * 0.8 + index;
+                small.rotation.y = time * 0.6;
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        function onMouseDown(e) {
+            isDragging = true;
+            previousMouseX = e.clientX;
+            previousMouseY = e.clientY;
+        }
+
+        function onMouseMove(e) {
+            if (!isDragging || !cube) return;
+            
+            const deltaX = e.clientX - previousMouseX;
+            const deltaY = e.clientY - previousMouseY;
+            
+            targetRotationY += deltaX * 0.0045;
+            targetRotationX += deltaY * 0.0045;
+            
+            // Clamp vertical rotation
+            targetRotationX = Math.max(-1.4, Math.min(1.4, targetRotationX));
+            
+            previousMouseX = e.clientX;
+            previousMouseY = e.clientY;
+        }
+
+        function onMouseUp() {
+            isDragging = false;
+        }
+
+        function onTouchStart(e) {
+            if (e.touches.length === 1) {
+                isDragging = true;
+                previousMouseX = e.touches[0].clientX;
+                previousMouseY = e.touches[0].clientY;
+                e.preventDefault();
+            }
+        }
+
+        function onTouchMove(e) {
+            if (!isDragging || e.touches.length !== 1 || !cube) return;
+            
+            const deltaX = e.touches[0].clientX - previousMouseX;
+            const deltaY = e.touches[0].clientY - previousMouseY;
+            
+            targetRotationY += deltaX * 0.0045;
+            targetRotationX += deltaY * 0.0045;
+            targetRotationX = Math.max(-1.4, Math.min(1.4, targetRotationX));
+            
+            previousMouseX = e.touches[0].clientX;
+            previousMouseY = e.touches[0].clientY;
+            e.preventDefault();
+        }
+
+        function onTouchEnd() {
+            isDragging = false;
+        }
+
+        // TNT Explosion Animation + Site Reload
+        function explodeTNT() {
+            if (!cube || !scene || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                window.location.reload();
+                return;
+            }
+
+            // Big scale up before explosion
+            cube.scale.set(1.3, 1.3, 1.3);
+
+            // Create explosion particles
+            const particleCount = 45;
+            const particles = [];
+            const colors = [0xc41e1e, 0xf59e0b, 0xfefce8, 0xef4444];
+
+            for (let i = 0; i < particleCount; i++) {
+                const size = 0.12 + Math.random() * 0.25;
+                const geo = new THREE.BoxGeometry(size, size, size);
+                const mat = new THREE.MeshPhongMaterial({
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    shininess: 20
+                });
+                const p = new THREE.Mesh(geo, mat);
+                
+                p.position.copy(cube.position);
+                p.userData = {
+                    vx: (Math.random() - 0.5) * 0.8,
+                    vy: (Math.random() - 0.5) * 0.8 + 0.6,
+                    vz: (Math.random() - 0.5) * 0.8,
+                    life: 45 + Math.random() * 25
+                };
+                scene.add(p);
+                particles.push(p);
+            }
+
+            // Hide the TNT cube during explosion
+            cube.visible = false;
+
+            let frame = 0;
+            const explodeAnim = setInterval(() => {
+                frame++;
+                
+                particles.forEach((p, idx) => {
+                    if (!p.userData) return;
+                    const data = p.userData;
+                    
+                    p.position.x += data.vx;
+                    p.position.y += data.vy;
+                    p.position.z += data.vz;
+                    
+                    data.vy -= 0.035; // gravity
+                    data.life--;
+                    
+                    // Fade out
+                    if (data.life < 15) {
+                        p.scale.multiplyScalar(0.92);
+                    }
+                    
+                    if (data.life <= 0) {
+                        scene.remove(p);
+                        particles[idx] = null;
+                    }
+                });
+
+                // Clean null particles
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    if (particles[i] === null) particles.splice(i, 1);
+                }
+
+                if (frame > 70 || particles.length === 0) {
+                    clearInterval(explodeAnim);
+                    // Reload the site after explosion
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 180);
+                }
+            }, 16);
+        }
+
+        // Trigger block reaction (called from filters/tabs)
+        function triggerBlockReaction(type) {
+            if (!cube || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            
+            const originalScale = cube.scale.x;
+            
+            if (type === 'plugin') {
+                cube.scale.set(1.12, 1.12, 1.12);
+                setTimeout(() => {
+                    if (cube) cube.scale.set(originalScale, originalScale, originalScale);
+                }, 280);
+            } else if (type === 'mod') {
+                cube.scale.set(0.88, 0.88, 0.88);
+                setTimeout(() => {
+                    if (cube) cube.scale.set(originalScale, originalScale, originalScale);
+                }, 280);
+            }
+        }
+
+        // ==================== PRODUCT DATA ====================
+        const products = [
+            // === 15 PLUGINS ===
+            { id: 1, type: 'plugin', name: "EssentialsX", slug: "essentialsx", price: 0, category: "Utility", author: "essentialsx", mcVersion: "1.21.x", rating: 4.9, reviews: 45230, desc: "The essential all-in-one plugin for commands, homes, warps, kits and economy.", longDesc: "EssentialsX is the most popular and complete plugin suite for Minecraft servers. It includes teleport commands, economy, kits, homes, warps, and much more. Perfect foundation for any server.", link: "https://modrinth.com/plugin/essentialsx" },
+            { id: 2, type: 'plugin', name: "LuckPerms", slug: "luckperms", price: 0, category: "Permissions", author: "lucko", mcVersion: "1.21.x", rating: 4.8, reviews: 32180, desc: "Powerful permissions manager with an intuitive web-based editor.", longDesc: "LuckPerms is the gold standard for permission management. Supports groups, tracks, contexts, and has a beautiful web editor for managing permissions across multiple servers.", link: "https://modrinth.com/plugin/luckperms" },
+            { id: 3, type: 'plugin', name: "WorldEdit", slug: "worldedit", price: 0, category: "World", author: "sk89q", mcVersion: "1.21.x", rating: 4.9, reviews: 28540, desc: "The ultimate in-game map editor. Build massive structures in seconds.", longDesc: "WorldEdit allows you to edit thousands of blocks at once, use brushes, copy/paste, generate terrain, and much more. Essential for creative and survival servers.", link: "https://modrinth.com/plugin/worldedit" },
+            { id: 4, type: 'plugin', name: "WorldGuard", slug: "worldguard", price: 0, category: "Protection", author: "sk89q", mcVersion: "1.21.x", rating: 4.7, reviews: 19870, desc: "Protect your spawn, regions and control player actions with powerful flags.", longDesc: "WorldGuard lets you create protected regions, set flags for PvP, building, entry and more. The perfect companion to WorldEdit.", link: "https://modrinth.com/plugin/worldguard" },
+            { id: 5, type: 'plugin', name: "CoreProtect", slug: "coreprotect", price: 0, category: "Utility", author: "Intelli", mcVersion: "1.21.x", rating: 4.8, reviews: 15690, desc: "Logs every block change and entity action for easy rollbacks.", longDesc: "CoreProtect is the best grief prevention and logging tool. Rollback griefing, investigate thefts, and keep your server safe with detailed logs.", link: "https://modrinth.com/plugin/coreprotect" },
+            { id: 6, type: 'plugin', name: "Vault", slug: "vault", price: 0, category: "Economy", author: "MilkBowl", mcVersion: "1.21.x", rating: 4.6, reviews: 12430, desc: "The universal bridge between economy and permission plugins.", longDesc: "Vault provides a common API for economy, permission and chat plugins. Required by hundreds of other plugins.", link: "https://modrinth.com/plugin/vault" },
+            { id: 7, type: 'plugin', name: "GeyserMC", slug: "geyser", price: 0, category: "Utility", author: "GeyserMC", mcVersion: "1.21.x", rating: 4.9, reviews: 9840, desc: "Let Bedrock Edition players join your Java server seamlessly.", longDesc: "GeyserMC is a bridge between Java and Bedrock. No mods required on Bedrock clients. Perfect for cross-platform communities.", link: "https://modrinth.com/plugin/geyser" },
+            { id: 8, type: 'plugin', name: "Spark", slug: "spark", price: 0, category: "Performance", author: "lucko", mcVersion: "1.21.x", rating: 4.8, reviews: 8720, desc: "Professional-grade performance profiler and lag diagnostics.", longDesc: "Spark helps you find exactly what is causing lag on your server with detailed profiling and beautiful web reports.", link: "https://modrinth.com/plugin/spark" },
+            { id: 9, type: 'plugin', name: "PlaceholderAPI", slug: "placeholderapi", price: 0, category: "Utility", author: "PlaceholderAPI", mcVersion: "1.21.x", rating: 4.7, reviews: 11240, desc: "Create and manage dynamic placeholders for other plugins.", longDesc: "PlaceholderAPI is used by hundreds of plugins to display dynamic information like player stats, server info, and more in chat, signs, and GUIs.", link: "https://modrinth.com/plugin/placeholderapi" },
+            { id: 10, type: 'plugin', name: "Bluemap", slug: "bluemap", price: 0, category: "World", author: "BlueMap", mcVersion: "1.21.x", rating: 4.9, reviews: 6540, desc: "Stunning interactive 3D web maps for your Minecraft world.", longDesc: "Bluemap renders your world in beautiful 3D and hosts it on a website. Players can explore the map in their browser.", link: "https://modrinth.com/plugin/bluemap" },
+            { id: 11, type: 'plugin', name: "DiscordSRV", slug: "discordsrv", price: 0, category: "Utility", author: "DiscordSRV", mcVersion: "1.21.x", rating: 4.6, reviews: 7830, desc: "Link your Minecraft server chat directly to Discord.", longDesc: "DiscordSRV creates a seamless bridge between your Minecraft server and Discord. Sync chat, staff channels, and more.", link: "https://modrinth.com/plugin/discordsrv" },
+            { id: 12, type: 'plugin', name: "GriefPrevention", slug: "griefprevention", price: 0, category: "Protection", author: "TechFort", mcVersion: "1.21.x", rating: 4.5, reviews: 5430, desc: "Simple and fair land claiming system to stop griefing.", longDesc: "GriefPrevention lets players claim land easily. No complicated commands. Great for SMP and survival servers.", link: "https://modrinth.com/plugin/griefprevention" },
+            { id: 13, type: 'plugin', name: "Chunky", slug: "chunky", price: 0, category: "World", author: "pop4959", mcVersion: "1.21.x", rating: 4.8, reviews: 4320, desc: "Pre-generate world chunks for smooth exploration.", longDesc: "Chunky pre-generates your world in the background so players never have to wait for terrain to load.", link: "https://modrinth.com/plugin/chunky" },
+            { id: 14, type: 'plugin', name: "ViaVersion", slug: "viaversion", price: 0, category: "Utility", author: "ViaVersion", mcVersion: "1.21.x", rating: 4.7, reviews: 9210, desc: "Allow older clients to connect to your newer server.", longDesc: "ViaVersion lets players on older Minecraft versions join servers running newer versions. Essential for large communities.", link: "https://modrinth.com/plugin/viaversion" },
+            { id: 15, type: 'plugin', name: "Multiverse-Core", slug: "multiverse-core", price: 0, category: "World", author: "Multiverse", mcVersion: "1.21.x", rating: 4.5, reviews: 3810, desc: "Create and manage multiple custom worlds on one server.", longDesc: "Multiverse lets you have multiple independent worlds with different settings, generators, and properties.", link: "https://modrinth.com/plugin/multiverse-core" },
+
+            // === 15 MODS ===
+            { id: 16, type: 'mod', name: "Sodium", slug: "sodium", price: 0, category: "Performance", author: "JellySquid", mcVersion: "1.21.3", rating: 4.9, reviews: 38320, desc: "Massive performance improvements and FPS boost.", longDesc: "Sodium is a rendering optimization mod that dramatically increases frame rates and reduces stutters. The foundation of modern Minecraft performance.", link: "https://modrinth.com/mod/sodium" },
+            { id: 17, type: 'mod', name: "Iris Shaders", slug: "iris", price: 0, category: "Visuals", author: "IrisShaders", mcVersion: "1.21.3", rating: 4.8, reviews: 27650, desc: "Modern shader loader with excellent OptiFine compatibility.", longDesc: "Iris is the best shader mod for Fabric/Quilt/NeoForge. Supports most OptiFine shader packs and adds powerful new features.", link: "https://modrinth.com/project/YL57xq9U" },
+            { id: 18, type: 'mod', name: "Create", slug: "create", price: 0, category: "Automation", author: "CreateMod", mcVersion: "1.21.1", rating: 4.9, reviews: 20640, desc: "Aesthetic kinetic automation with belts, gears and contraptions.", longDesc: "Create adds beautiful and functional automation. Build factories, trains, and incredible machines using gears, belts, and stress mechanics.", link: "https://modrinth.com/project/LNytGWDc" },
+            { id: 19, type: 'mod', name: "Sophisticated Backpacks", slug: "sophisticated-backpacks", price: 0, category: "Utility", author: "P3pp3rF1y", mcVersion: "1.21.x", rating: 4.8, reviews: 12580, desc: "Advanced backpacks with upgrades, filters, and crafting grids.", longDesc: "Sophisticated Backpacks takes storage to the next level with tiered backpacks, auto-pickup, crafting upgrades, and more.", link: "https://modrinth.com/mod/sophisticated-backpacks" },
+            { id: 20, type: 'mod', name: "Biomes O' Plenty", slug: "biomes-o-plenty", price: 0, category: "World", author: "Forstride", mcVersion: "1.21.x", rating: 4.7, reviews: 9840, desc: "Over 50 new beautiful and unique biomes to explore.", longDesc: "Biomes O' Plenty adds a huge variety of new biomes, plants, and trees, making exploration exciting again.", link: "https://modrinth.com/mod/biomes-o-plenty" },
+            { id: 21, type: 'mod', name: "ImmediatelyFast", slug: "immediatelyfast", price: 0, category: "Performance", author: "RK_01", mcVersion: "1.21.3", rating: 4.8, reviews: 7430, desc: "Significant client-side performance improvements.", longDesc: "ImmediatelyFast optimizes many client-side systems including GUI rendering, entity culling, and more for higher FPS.", link: "https://modrinth.com/mod/immediatelyfast" },
+            { id: 22, type: 'mod', name: "FerriteCore", slug: "ferritecore", price: 0, category: "Performance", author: "malte0811", mcVersion: "1.21.x", rating: 4.7, reviews: 6210, desc: "Reduces memory usage significantly on both client and server.", longDesc: "FerriteCore dramatically lowers RAM usage by optimizing data structures. Great for modpacks and large servers.", link: "https://modrinth.com/mod/ferritecore" },
+            { id: 23, type: 'mod', name: "Entity Culling", slug: "entity-culling", price: 0, category: "Performance", author: "tr7zw", mcVersion: "1.21.3", rating: 4.6, reviews: 5890, desc: "Hides entities that are not visible to improve FPS.", longDesc: "Entity Culling removes entities behind walls and out of view frustum, giving big FPS gains in crowded areas.", link: "https://modrinth.com/mod/entity-culling" },
+            { id: 24, type: 'mod', name: "Reese's Sodium Options", slug: "reeses-sodium-options", price: 0, category: "Visuals", author: "FlashyReese", mcVersion: "1.21.3", rating: 4.8, reviews: 4120, desc: "Beautiful and organized video settings menu for Sodium.", longDesc: "Replaces the default Sodium options menu with a much cleaner, categorized, and feature-rich interface.", link: "https://modrinth.com/mod/reeses-sodium-options" },
+            { id: 25, type: 'mod', name: "Mod Menu", slug: "modmenu", price: 0, category: "Utility", author: "Prospector", mcVersion: "1.21.3", rating: 4.9, reviews: 18760, desc: "Clean in-game mod configuration menu.", longDesc: "Mod Menu adds a beautiful mods screen to Minecraft where you can configure all your mods easily.", link: "https://modrinth.com/mod/modmenu" },
+            { id: 26, type: 'mod', name: "Architectury API", slug: "architectury", price: 0, category: "Utility", author: "Architectury", mcVersion: "1.21.x", rating: 4.5, reviews: 9340, desc: "Cross-platform API for mod developers (Fabric/Forge).", longDesc: "Architectury is the standard API used by many mods to support both Fabric and Forge/NeoForge with one codebase.", link: "https://modrinth.com/mod/architectury-api" },
+            { id: 27, type: 'mod', name: "Starlight", slug: "starlight", price: 0, category: "Performance", author: "PaperMC", mcVersion: "1.21.x", rating: 4.7, reviews: 5120, desc: "Dramatically faster lighting engine for the server.", longDesc: "Starlight replaces Minecraft's lighting engine with a much faster implementation. Huge performance win for servers.", link: "https://modrinth.com/mod/starlight" },
+            { id: 28, type: 'mod', name: "Farmer's Delight", slug: "farmers-delight", price: 0, category: "Automation", author: "vectorwing", mcVersion: "1.21.x", rating: 4.8, reviews: 8740, desc: "Cooking, farming and rustic automation content.", longDesc: "Farmer's Delight adds tons of new food, cooking mechanics, and rustic automation blocks that feel right at home in Minecraft.", link: "https://modrinth.com/mod/farmers-delight" },
+            { id: 29, type: 'mod', name: "Distant Horizons", slug: "distant-horizons", price: 0, category: "Visuals", author: "JamesSeeker", mcVersion: "1.21.3", rating: 4.6, reviews: 3240, desc: "Render extremely far terrain with level-of-detail system.", longDesc: "Distant Horizons lets you see mountains and terrain from thousands of blocks away without killing your FPS.", link: "https://modrinth.com/mod/distant-horizons" },
+            { id: 30, type: 'mod', name: "Create: Connected", slug: "create-connected", price: 0, category: "Automation", author: "CreateModAddons", mcVersion: "1.21.1", rating: 4.7, reviews: 2890, desc: "Quality of life additions and new contraptions for Create.", longDesc: "Create: Connected adds many useful blocks and features that feel like they should have been in the base Create mod.", link: "https://modrinth.com/mod/create-connected" }
+        ];
+
+        let currentFilter = { type: 'plugin', search: '', version: '', sort: 'popular', category: '' };
+        let currentUser = null;
+        let userLibrary = [];
+
+        // ==================== AUTH ====================
+        function updateNavUser() {
+            const area = document.getElementById('nav-user-area');
+            if (!area) return;
+
+            if (currentUser) {
+                area.innerHTML = `
+                    <div class="relative group">
+                        <button class="flex items-center gap-x-2.5 px-4 py-2 bg-[#111827] border border-[#374151] rounded-2xl text-sm hover:border-[#10b981] transition-colors">
+                            <div class="w-7 h-7 bg-[#10b981] rounded-xl flex items-center justify-center text-[#0A0F1C] text-xs font-bold">
+                                ${currentUser.ign ? currentUser.ign[0].toUpperCase() : 'U'}
+                            </div>
+                            <span class="font-medium">${currentUser.ign || currentUser.email.split('@')[0]}</span>
+                            <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        
+                        <div class="absolute right-0 mt-2 w-56 bg-[#111827] border border-[#374151] rounded-2xl shadow-xl py-2 hidden group-hover:block z-50">
+                            <div class="px-4 py-2 text-xs text-[#64748B] border-b border-[#374151]">Signed in as</div>
+                            <div class="px-4 py-2 font-medium">${currentUser.email}</div>
+                            
+                            <div class="border-t border-[#374151] my-1"></div>
+                            
+                            <button onclick="showLibrary(); document.querySelector('.group').classList.remove('group-hover:block')" class="w-full text-left px-4 py-2.5 text-sm hover:bg-[#1F2937] flex items-center gap-x-3">
+                                <i class="fa-solid fa-download w-4"></i> 
+                                <span>My Library</span>
+                            </button>
+                            
+                            <button onclick="logout()" class="w-full text-left px-4 py-2.5 text-sm hover:bg-[#1F2937] flex items-center gap-x-3 text-red-400">
+                                <i class="fa-solid fa-sign-out-alt w-4"></i> 
+                                <span>Logout</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else {
+                area.innerHTML = `
+                    <button onclick="showLoginModal()" 
+                            class="flex items-center gap-x-2 px-5 py-2 text-sm font-medium bg-[#111827] hover:bg-[#1F2937] border border-[#374151] rounded-2xl transition-all active:scale-[0.985]">
+                        <i class="fa-solid fa-user mr-2"></i>
+                        <span data-lang="login">ورود</span>
+                    </button>
+                `;
+            }
+        }
+
+        function showLoginModal() {
+            document.getElementById('login-modal').classList.remove('hidden');
+            document.getElementById('login-modal').classList.add('flex');
+            switchAuthTab('login');
+        }
+
+        function closeLoginModal() {
+            const modal = document.getElementById('login-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function switchAuthTab(tab) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const loginTab = document.getElementById('auth-tab-login');
+            const registerTab = document.getElementById('auth-tab-register');
+
+            if (tab === 'login') {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                loginTab.classList.add('border-b-2', 'border-[#10b981]', 'text-white');
+                loginTab.classList.remove('text-[#64748B]');
+                registerTab.classList.remove('border-b-2', 'border-[#10b981]', 'text-white');
+                registerTab.classList.add('text-[#64748B]');
+            } else {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                registerTab.classList.add('border-b-2', 'border-[#10b981]', 'text-white');
+                registerTab.classList.remove('text-[#64748B]');
+                loginTab.classList.remove('border-b-2', 'border-[#10b981]', 'text-white');
+                loginTab.classList.add('text-[#64748B]');
+            }
+        }
+
+        function performLogin() {
+            const email = document.getElementById('login-email').value || 'steve@blockbazaar.dev';
+            currentUser = {
+                email: email,
+                ign: email.includes('@') ? email.split('@')[0] : 'Steve',
+                joined: new Date().toISOString()
+            };
+            
+            // Load library from localStorage
+            const savedLibrary = localStorage.getItem('blockBazaarLibrary');
+            if (savedLibrary) {
+                userLibrary = JSON.parse(savedLibrary);
+            }
+            
+            localStorage.setItem('blockBazaarUser', JSON.stringify(currentUser));
+            
+            closeLoginModal();
+            updateNavUser();
+            showToast('Welcome back, ' + currentUser.ign + '!', 'success');
+            
+            // Show library hint
+            setTimeout(() => {
+                if (userLibrary.length > 0) {
+                    showToast('You have ' + userLibrary.length + ' items in your library', 'info');
+                }
+            }, 1800);
+        }
+
+        function performRegister() {
+            const ign = document.getElementById('reg-ign').value || 'NewCrafter';
+            const email = document.getElementById('reg-email').value || 'new@blockbazaar.dev';
+            
+            currentUser = {
+                email: email,
+                ign: ign,
+                joined: new Date().toISOString()
+            };
+            
+            localStorage.setItem('blockBazaarUser', JSON.stringify(currentUser));
+            userLibrary = [];
+            localStorage.setItem('blockBazaarLibrary', JSON.stringify(userLibrary));
+            
+            closeLoginModal();
+            updateNavUser();
+            showToast('Account created! Welcome to the Bazaar, ' + ign + '!', 'success');
+        }
+
+        function logout() {
+            currentUser = null;
+            userLibrary = [];
+            localStorage.removeItem('blockBazaarUser');
+            updateNavUser();
+            document.getElementById('library-section').classList.add('hidden');
+            showToast('Logged out successfully', 'info');
+        }
+
+        // ==================== LANGUAGE SYSTEM (Persian Default) ====================
+        let currentLang = 'fa';
+
+        const translations = {
+            'fa': {
+                'login': 'ورود',
+                'support': 'پشتیبانی',
+                'discover': 'کشف کنید',
+                'store': 'فروشگاه',
+                'library': 'کتابخانه من',
+                'search_placeholder': 'جستجوی پلاگین و مود...',
+                'hero_title': 'دنیای خودت.<br><span class="bg-gradient-to-r from-[#10b981] via-[#34d399] to-[#10b981] bg-clip-text text-transparent">دوباره ساخته شد.</span>',
+                'hero_subtitle': 'بازار متمایز پلاگین‌ها و مودهای ماینکرافت. منتخب. معتبر. ساخته شده توسط جامعه.',
+                'browse_btn': 'گشت‌وگذار در بازار',
+                'chat_btn': 'گفتگو با پشتیبانی',
+                'stats_downloads': 'دانلود کل',
+                'stats_items': 'پلاگین و مود',
+                'stats_servers': 'سرور فعال',
+                'stats_rating': 'امتیاز میانگین',
+                'bazaar_title': 'بازار',
+                'plugins_tab': 'پلاگین‌ها',
+                'mods_tab': 'مودها',
+                'filter_all': 'همه',
+                'filter_free': 'رایگان',
+                'filter_paid': 'پریمیوم',
+                'view_btn': 'مشاهده',
+                'download_btn': 'دانلود',
+                'buy_btn': 'خرید',
+                'owned_badge': 'OWNED',
+                'login_modal_title': 'ورود به بازار بلوک',
+                'register_modal_title': 'ایجاد حساب کاربری',
+                'chat_welcome': 'سلام! من تیم پشتیبانی بازار بلوک هستم. چطور می‌تونم کمکتون کنم؟',
+                'toast_welcome': 'خوش آمدید',
+            },
+            'en': {
+                'login': 'Login',
+                'support': 'Support',
+                'discover': 'Discover',
+                'store': 'Store',
+                'library': 'My Library',
+                'search_placeholder': 'Search plugins & mods...',
+                'hero_title': 'Your world.<br><span class="bg-gradient-to-r from-[#10b981] via-[#34d399] to-[#10b981] bg-clip-text text-transparent">Rebuilt.</span>',
+                'hero_subtitle': 'The most distinctive marketplace for Minecraft plugins and mods. Curated. Trusted. Built by the community.',
+                'browse_btn': 'Browse the Bazaar',
+                'chat_btn': 'Talk to Support',
+                'stats_downloads': 'TOTAL DOWNLOADS',
+                'stats_items': 'PLUGINS & MODS',
+                'stats_servers': 'ACTIVE SERVERS',
+                'stats_rating': 'AVERAGE RATING',
+                'bazaar_title': 'The Bazaar',
+                'plugins_tab': 'Plugins',
+                'mods_tab': 'Mods',
+                'filter_all': 'All',
+                'filter_free': 'Free',
+                'filter_paid': 'Premium',
+                'view_btn': 'View',
+                'download_btn': 'Download',
+                'buy_btn': 'Buy',
+                'owned_badge': 'OWNED',
+                'login_modal_title': 'Login to Block Bazaar',
+                'register_modal_title': 'Create Account',
+                'chat_welcome': 'Hi there! I\'m the Block Bazaar support team. How can I help you today?',
+                'toast_welcome': 'Welcome back',
+            }
+        };
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('blockBazaarLang', lang);
+            
+            // Update active button styles
+            document.getElementById('lang-fa').classList.toggle('active', lang === 'fa');
+            document.getElementById('lang-fa').classList.toggle('text-[#64748B]', lang !== 'fa');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-en').classList.toggle('text-[#64748B]', lang !== 'en');
+            
+            // Re-render all translatable elements
+            applyLanguage();
+            
+            // Refresh products to update button texts if needed
+            filterProducts();
+        }
+
+        function applyLanguage() {
+            const t = translations[currentLang];
+            
+            // Update nav links
+            document.querySelectorAll('.nav-link').forEach(el => {
+                const faText = el.getAttribute('data-fa');
+                const enText = el.getAttribute('data-en');
+                if (faText && enText) {
+                    el.textContent = currentLang === 'fa' ? faText : enText;
+                }
+            });
+            
+            // Update elements with data-lang
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (t[key]) el.textContent = t[key];
+            });
+            
+            // Update placeholders
+            const searchInput = document.getElementById('global-search');
+            if (searchInput) searchInput.placeholder = t.search_placeholder || (currentLang === 'fa' ? 'جستجوی پلاگین و مود...' : 'Search plugins & mods...');
+            
+            // Update hero texts (if we want dynamic, but for simplicity static Persian with option)
+            // Hero is mostly static in Persian now for default
+            
+            // Update tab texts
+            const pluginTab = document.getElementById('tab-plugin');
+            const modTab = document.getElementById('tab-mod');
+            if (pluginTab) pluginTab.innerHTML = `<i class="fa-solid fa-plug"></i> <span>${t.plugins_tab} <span class="font-mono text-xs opacity-60" id="plugin-count">(15)</span></span>`;
+            if (modTab) modTab.innerHTML = `<i class="fa-solid fa-puzzle-piece"></i> <span>${t.mods_tab} <span class="font-mono text-xs opacity-60" id="mod-count">(15)</span></span>`;
+            
+            // Update price filter buttons
+            const priceAll = document.getElementById('price-all');
+            const priceFree = document.getElementById('price-free');
+            const pricePaid = document.getElementById('price-paid');
+            if (priceAll) priceAll.textContent = t.filter_all;
+            if (priceFree) priceFree.textContent = t.filter_free;
+            if (pricePaid) pricePaid.textContent = t.filter_paid;
+            
+            // Re-apply to product cards (re-render for button text)
+            const grid = document.getElementById('products-grid');
+            if (grid && grid.children.length > 0) {
+                // Simple refresh by re-filtering
+                setTimeout(() => filterProducts(), 50);
+            }
+        }
+
+        // Mobile menu removed as per request - using responsive Tailwind classes instead
+
+        // Load saved language or default to Persian
+        function initLanguage() {
+            const savedLang = localStorage.getItem('blockBazaarLang');
+            if (savedLang) {
+                currentLang = savedLang;
+            } else {
+                currentLang = 'fa'; // Default Persian
+            }
+            
+            // Set initial button states
+            const faBtn = document.getElementById('lang-fa');
+            const enBtn = document.getElementById('lang-en');
+            if (faBtn && enBtn) {
+                faBtn.classList.toggle('active', currentLang === 'fa');
+                faBtn.classList.toggle('text-[#64748B]', currentLang !== 'fa');
+                enBtn.classList.toggle('active', currentLang === 'en');
+                enBtn.classList.toggle('text-[#64748B]', currentLang !== 'en');
+            }
+            
+            applyLanguage();
+        }
+
+        function checkExistingLogin() {
+            const savedUser = localStorage.getItem('blockBazaarUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                const savedLibrary = localStorage.getItem('blockBazaarLibrary');
+                if (savedLibrary) userLibrary = JSON.parse(savedLibrary);
+                updateNavUser();
+            }
+        }
+
+        // ==================== PRODUCT RENDERING ====================
+        function renderProducts(filteredProducts) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-12 text-center">
+                        <i class="fa-solid fa-search text-4xl text-[#374151] mb-4"></i>
+                        <p class="text-[#64748B]">No items found matching your filters.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredProducts.forEach(product => {
+                const isFree = product.price === 0;
+                const isOwned = userLibrary.some(item => item.id === product.id);
+                
+                const cardHTML = `
+                    <div class="product-card bg-[#111827] border border-[#374151] rounded-3xl overflow-hidden group flex flex-col h-full">
+                        <!-- Header -->
+                        <div class="h-2.5 ${product.type === 'plugin' ? 'bg-[#10b981]' : 'bg-[#f59e0b]'}"></div>
+                        
+                        <div class="p-5 flex-1 flex flex-col">
+                            <!-- Badges -->
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-x-2">
+                                    <span class="product-badge px-3 py-1 rounded-2xl ${product.type === 'plugin' ? 'bg-[#10b981]/10 text-[#10b981]' : 'bg-[#f59e0b]/10 text-[#f59e0b]'}">
+                                        ${product.type.toUpperCase()}
+                                    </span>
+                                    <span class="text-xs px-2.5 py-1 bg-[#1F2937] text-[#64748B] rounded-xl font-mono">${product.mcVersion}</span>
+                                </div>
+                                
+                                ${isOwned ? `
+                                    <span class="text-[10px] px-2.5 py-0.5 bg-emerald-900/30 text-emerald-400 rounded-full flex items-center gap-x-1">
+                                        <i class="fa-solid fa-check text-xs"></i> <span class="font-medium">OWNED</span>
+                                    </span>
+                                ` : ''}
+                            </div>
+
+                            <!-- Title -->
+                            <h4 class="font-semibold text-xl tracking-tight mb-1 group-hover:text-[#10b981] transition-colors">${product.name}</h4>
+                            
+                            <!-- Author + Category -->
+                            <div class="flex items-center text-xs text-[#64748B] mb-3">
+                                <span>by <span class="text-[#94A3B8]">${product.author}</span></span>
+                                <span class="mx-2">•</span>
+                                <span>${product.category}</span>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-sm text-[#94A3B8] line-clamp-3 flex-1">${product.desc}</p>
+
+                            <!-- Rating -->
+                            <div class="flex items-center gap-x-2 mt-4 mb-4">
+                                <div class="flex text-[#f59e0b]">
+                                    ${Array.from({length: 5}).map((_, i) => 
+                                        `<i class="fa-solid fa-star ${i < Math.floor(product.rating) ? '' : 'opacity-30'}"></i>`
+                                    ).join('')}
+                                </div>
+                                <div class="text-xs text-[#64748B]">
+                                    ${product.rating} <span class="opacity-60">(${product.reviews.toLocaleString()})</span>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="flex items-center justify-between mt-auto pt-4 border-t border-[#374151]">
+                                <div>
+                                    ${isFree ? 
+                                        `<span class="font-bold text-lg text-[#10b981]">FREE</span>` : 
+                                        `<span class="font-bold text-lg">$${product.price}</span>`
+                                    }
+                                </div>
+                                
+                                <div class="flex gap-x-2">
+                                    <button onclick="showProductDetail(${product.id}); event.stopImmediatePropagation();" 
+                                            class="px-4 py-2 text-xs font-medium border border-[#374151] hover:bg-[#1F2937] rounded-2xl transition-colors">
+                                        View
+                                    </button>
+                                    
+                                    ${isOwned ? 
+                                        `<button onclick="downloadProduct(${product.id}); event.stopImmediatePropagation();" 
+                                                class="px-5 py-2 text-xs font-bold bg-[#10b981] text-[#0A0F1C] rounded-2xl flex items-center gap-x-1.5 hover:bg-[#34d399]">
+                                            <i class="fa-solid fa-download text-xs"></i>
+                                            <span>Download</span>
+                                        </button>` : 
+                                        isFree ?
+                                        `<button onclick="downloadProduct(${product.id}); event.stopImmediatePropagation();" 
+                                                class="px-5 py-2 text-xs font-bold bg-[#10b981] text-[#0A0F1C] rounded-2xl flex items-center gap-x-1.5 hover:bg-[#34d399]">
+                                            <i class="fa-solid fa-download text-xs"></i>
+                                            <span>Download</span>
+                                        </button>` :
+                                        `<button onclick="buyProduct(${product.id}); event.stopImmediatePropagation();" 
+                                                class="px-5 py-2 text-xs font-bold bg-[#f59e0b] text-[#0A0F1C] rounded-2xl flex items-center gap-x-1.5 hover:bg-amber-400">
+                                            <span>Buy</span>
+                                        </button>`
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                grid.innerHTML += cardHTML;
+            });
+        }
+
+        function filterProducts() {
+            const searchTerm = (document.getElementById('search-input')?.value || document.getElementById('global-search')?.value || '').toLowerCase();
+            const version = document.getElementById('version-filter')?.value || '';
+            
+            let filtered = products.filter(p => {
+                const matchesType = p.type === currentFilter.type;
+                const matchesSearch = !searchTerm || 
+                    p.name.toLowerCase().includes(searchTerm) || 
+                    p.desc.toLowerCase().includes(searchTerm) || 
+                    p.author.toLowerCase().includes(searchTerm);
+                
+                const matchesVersion = !version || p.mcVersion.includes(version);
+                const matchesCategory = !currentFilter.category || p.category === currentFilter.category;
+                
+                return matchesType && matchesSearch && matchesVersion && matchesCategory;
+            });
+
+            // Apply sorting
+            const sortMode = document.getElementById('sort-select')?.value || currentFilter.sort || 'popular';
+            if (sortMode === 'popular') {
+                filtered.sort((a, b) => b.reviews - a.reviews);
+            } else if (sortMode === 'rating') {
+                filtered.sort((a, b) => b.rating - a.rating);
+            } else if (sortMode === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+            renderProducts(filtered);
+        }
+
+        function filterByCategory(cat) {
+            currentFilter.category = cat;
+            
+            // Update active pill
+            document.querySelectorAll('#category-pills .category-pill').forEach(el => {
+                el.classList.remove('active', 'bg-[#10b981]', 'text-white');
+                el.classList.add('border-[#374151]');
+                if ((cat === '' && el.textContent.trim() === 'همه') || el.textContent.trim() === cat) {
+                    el.classList.add('active', 'bg-[#10b981]', 'text-white');
+                    el.classList.remove('border-[#374151]');
+                }
+            });
+            
+            filterProducts();
+        }
+
+        function switchTab(type) {
+            currentFilter.type = type;
+            
+            // Update tab styles
+            document.getElementById('tab-plugin').classList.toggle('active', type === 'plugin');
+            document.getElementById('tab-mod').classList.toggle('active', type === 'mod');
+            
+            // Trigger block reaction
+            triggerBlockReaction(type);
+            
+            filterProducts();
+        }
+
+        function setPriceFilter(mode) {
+            currentFilter.price = mode;
+            
+            // Update button styles
+            document.getElementById('price-all').classList.toggle('filter-active', mode === 'all');
+            document.getElementById('price-free').classList.toggle('filter-active', mode === 'free');
+            document.getElementById('price-paid').classList.toggle('filter-active', mode === 'paid');
+            
+            filterProducts();
+        }
+
+        // ==================== PRODUCT DETAIL & ACTIONS ====================
+        let currentProductId = null;
+
+        function showProductDetail(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            currentProductId = id;
+
+            const modal = document.getElementById('product-modal');
+            const header = document.getElementById('modal-header');
+            const body = document.getElementById('modal-body');
+            const priceEl = document.getElementById('modal-price');
+            const actions = document.getElementById('modal-actions');
+
+            const isFree = product.price === 0;
+            const isOwned = userLibrary.some(item => item.id === id);
+
+            header.innerHTML = `
+                <div class="flex items-center gap-x-4">
+                    <div class="${product.type === 'plugin' ? 'bg-[#10b981]' : 'bg-[#f59e0b]'} w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid ${product.type === 'plugin' ? 'fa-plug' : 'fa-puzzle-piece'} text-3xl text-[#0A0F1C]"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-x-3">
+                            <h3 class="font-display text-3xl tracking-tighter">${product.name}</h3>
+                            <span class="text-xs px-3 py-1 rounded-2xl ${product.type === 'plugin' ? 'bg-[#10b981]/10 text-[#10b981]' : 'bg-[#f59e0b]/10 text-[#f59e0b]'} font-bold self-start mt-1.5">
+                                ${product.type.toUpperCase()}
+                            </span>
+                        </div>
+                        <div class="text-[#64748B] text-sm">by ${product.author} • ${product.category}</div>
+                    </div>
+                </div>
+            `;
+
+            body.innerHTML = `
+                <div class="prose prose-invert max-w-none">
+                    <p class="text-lg text-[#CBD5E1]">${product.longDesc}</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8 text-sm">
+                        <div class="bg-[#0A0F1C] rounded-2xl p-4">
+                            <div class="text-[#64748B] text-xs tracking-wider mb-1">MINECRAFT VERSION</div>
+                            <div class="font-semibold">${product.mcVersion}</div>
+                        </div>
+                        <div class="bg-[#0A0F1C] rounded-2xl p-4">
+                            <div class="text-[#64748B] text-xs tracking-wider mb-1">COMMUNITY RATING</div>
+                            <div class="flex items-center gap-x-2">
+                                <span class="font-semibold">${product.rating}</span>
+                                <div class="flex text-[#f59e0b]">
+                                    ${Array.from({length: 5}).map((_, i) => 
+                                        `<i class="fa-solid fa-star text-sm ${i < Math.floor(product.rating) ? '' : 'opacity-30'}"></i>`
+                                    ).join('')}
+                                </div>
+                                <span class="text-xs text-[#64748B]">(${product.reviews.toLocaleString()} reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            priceEl.innerHTML = isFree ? 
+                `<span class="text-[#10b981] font-bold text-3xl">FREE</span>` : 
+                `<span class="font-bold text-3xl">$${product.price}</span> <span class="text-xs text-[#64748B]">one-time</span>`;
+
+            let actionHTML = '';
+            
+            if (isOwned) {
+                actionHTML = `
+                    <button onclick="downloadProduct(${id}); closeProductModal()" 
+                            class="px-8 py-3 bg-[#10b981] text-[#0A0F1C] font-bold rounded-3xl flex items-center gap-x-2 hover:bg-[#34d399]">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download Again</span>
+                    </button>
+                `;
+            } else if (isFree) {
+                actionHTML = `
+                    <button onclick="downloadProduct(${id}); closeProductModal()" 
+                            class="px-8 py-3 bg-[#10b981] text-[#0A0F1C] font-bold rounded-3xl flex items-center gap-x-2 hover:bg-[#34d399]">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download Free</span>
+                    </button>
+                `;
+            } else {
+                actionHTML = `
+                    <button onclick="buyProduct(${id}); closeProductModal()" 
+                            class="px-8 py-3 bg-[#f59e0b] text-[#0A0F1C] font-bold rounded-3xl flex items-center gap-x-2 hover:bg-amber-400">
+                        <span>Buy for $${product.price}</span>
+                    </button>
+                `;
+            }
+
+            actionHTML += `
+                <a href="${product.link}" target="_blank" 
+                   class="px-6 py-3 border border-[#374151] hover:bg-[#1F2937] rounded-3xl text-sm flex items-center gap-x-2 transition-colors">
+                    <span>Official Page</span>
+                    <i class="fa-solid fa-external-link-alt text-xs"></i>
+                </a>
+            `;
+
+            actions.innerHTML = actionHTML;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeProductModal() {
+            const modal = document.getElementById('product-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function buyProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            if (!currentUser) {
+                closeProductModal();
+                showLoginModal();
+                showToast('Please login to purchase items', 'info');
+                return;
+            }
+
+            // Fake checkout modal
+            const checkoutHTML = `
+                <div id="checkout-modal" class="fixed inset-0 bg-black/80 z-[130] flex items-center justify-center p-4">
+                    <div class="bg-[#111827] border border-[#374151] rounded-3xl w-full max-w-md p-8 modal">
+                        <div class="text-center">
+                            <div class="mx-auto w-16 h-16 bg-[#f59e0b] rounded-2xl flex items-center justify-center mb-5">
+                                <i class="fa-solid fa-gem text-4xl text-[#0A0F1C]"></i>
+                            </div>
+                            
+                            <h3 class="font-display text-2xl tracking-tight">Complete Purchase</h3>
+                            <p class="text-[#64748B] mt-1">You're buying <span class="font-semibold text-white">${product.name}</span></p>
+                            
+                            <div class="my-8 py-4 border-y border-[#374151]">
+                                <div class="text-5xl font-bold">$${product.price}</div>
+                                <div class="text-xs text-[#64748B] mt-1">ONE-TIME PAYMENT • LIFETIME ACCESS</div>
+                            </div>
+                            
+                            <div class="text-left text-sm space-y-3 mb-8">
+                                <div class="flex justify-between"><span class="text-[#64748B]">Item</span> <span>${product.name}</span></div>
+                                <div class="flex justify-between"><span class="text-[#64748B]">License</span> <span>Personal + Server</span></div>
+                                <div class="flex justify-between"><span class="text-[#64748B]">Updates</span> <span class="text-[#10b981]">Lifetime</span></div>
+                            </div>
+                            
+                            <button onclick="confirmPurchase(${id})" 
+                                    class="w-full py-4 bg-[#f59e0b] hover:bg-amber-400 text-[#0A0F1C] font-extrabold rounded-3xl text-lg transition-all">
+                                Pay $${product.price} with Emeralds
+                            </button>
+                            
+                            <button onclick="document.getElementById('checkout-modal').remove()" 
+                                    class="mt-4 text-sm text-[#64748B] hover:text-white">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', checkoutHTML);
+        }
+
+        function confirmPurchase(id) {
+            const product = products.find(p => p.id === id);
+            const checkoutModal = document.getElementById('checkout-modal');
+            if (checkoutModal) checkoutModal.remove();
+
+            // Simulate processing
+            const processingToast = showToast('Processing payment...', 'info', 1200);
+
+            setTimeout(() => {
+                // Add to library
+                if (!userLibrary.some(item => item.id === id)) {
+                    userLibrary.push(product);
+                    localStorage.setItem('blockBazaarLibrary', JSON.stringify(userLibrary));
+                }
+
+                closeProductModal();
+                
+                showToast(`Purchase successful! ${product.name} added to your library.`, 'success');
+                
+                // Trigger download automatically
+                setTimeout(() => {
+                    downloadProduct(id, true);
+                }, 800);
+                
+                // Refresh products
+                filterProducts();
+            }, 1350);
+        }
+
+        // Beautiful Download Progress Modal (Minecraft style)
+        function showDownloadProgress(product) {
+            const modalHTML = `
+                <div id="download-progress-modal" class="fixed inset-0 bg-black/80 z-[150] flex items-center justify-center p-4">
+                    <div class="bg-[#111827] border border-[#374151] rounded-3xl w-full max-w-md p-8 modal text-center">
+                        <div class="mx-auto w-20 h-20 bg-[#10b981] rounded-2xl flex items-center justify-center mb-6 relative">
+                            <i class="fa-solid fa-download text-4xl text-[#0A0F1C]"></i>
+                            <div class="absolute -top-1 -right-1 w-6 h-6 bg-[#f59e0b] rounded-full flex items-center justify-center">
+                                <i class="fa-solid fa-check text-xs text-[#0A0F1C]"></i>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-display text-2xl tracking-tight mb-1">در حال دانلود...</h3>
+                        <p class="text-[#64748B] text-sm mb-6">${product.name}</p>
+                        
+                        <div class="w-full bg-[#1F2937] rounded-full h-3 mb-2 overflow-hidden">
+                            <div id="download-bar" class="h-3 bg-gradient-to-r from-[#10b981] to-[#34d399] rounded-full transition-all duration-300" style="width: 0%"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-[#64748B]">
+                            <span>Connecting to Modrinth...</span>
+                            <span id="download-percent">0%</span>
+                        </div>
+                        
+                        <button onclick="closeDownloadProgress()" 
+                                class="mt-6 text-sm px-6 py-2 text-[#64748B] hover:text-white transition-colors">
+                            انصراف
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+            
+            // Animate progress bar
+            let progress = 0;
+            const bar = document.getElementById('download-bar');
+            const percentEl = document.getElementById('download-percent');
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 18 + 8;
+                if (progress > 100) progress = 100;
+                
+                if (bar) bar.style.width = progress + '%';
+                if (percentEl) percentEl.textContent = Math.floor(progress) + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        closeDownloadProgress();
+                        showToast(`${product.name} دانلود شد! صفحه رسمی در تب جدید باز شد.`, 'success');
+                    }, 450);
+                }
+            }, 120);
+        }
+        
+        function closeDownloadProgress() {
+            const modal = document.getElementById('download-progress-modal');
+            if (modal) modal.remove();
+        }
+
+        function downloadProduct(id, fromPurchase = false) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            if (!currentUser) {
+                showLoginModal();
+                showToast(currentLang === 'fa' ? 'برای دانلود وارد شوید' : 'Login required to download', 'info');
+                return;
+            }
+
+            // Add to library
+            if (!userLibrary.some(item => item.id === id)) {
+                userLibrary.push(product);
+                localStorage.setItem('blockBazaarLibrary', JSON.stringify(userLibrary));
+            }
+
+            // Show beautiful download progress modal
+            showDownloadProgress(product);
+
+            // Real download after short delay
+            setTimeout(() => {
+                if (product.link) {
+                    window.open(product.link, '_blank');
+                }
+            }, 1450);
+
+            // Also trigger a small instruction file (so user feels download happened)
+            const filename = `${product.slug}-instructions.txt`;
+            const content = `بازار بلوک - دستورالعمل دانلود واقعی\n\n` +
+                `آیتم: ${product.name}\n` +
+                `لینک رسمی: ${product.link}\n\n` +
+                `این صفحه رسمی Modrinth باز شد.\n` +
+                `برای دانلود واقعی .jar روی دکمه Download در صفحه رسمی کلیک کنید.\n\n` +
+                `تاریخ: ${new Date().toLocaleString()}`;
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Toast in correct language
+            const msg = currentLang === 'fa' 
+                ? `${product.name} - صفحه رسمی در تب جدید باز شد` 
+                : `${product.name} official page opened in new tab`;
+            showToast(msg, 'success');
+
+            filterProducts();
+        }
+
+        // ==================== LIBRARY ====================
+        function showLibrary() {
+            if (!currentUser) {
+                showLoginModal();
+                return;
+            }
+            
+            const section = document.getElementById('library-section');
+            const grid = document.getElementById('library-grid');
+            
+            section.classList.remove('hidden');
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            grid.innerHTML = '';
+
+            if (userLibrary.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-10 text-center border border-dashed border-[#374151] rounded-3xl">
+                        <i class="fa-solid fa-inbox text-4xl text-[#374151] mb-4"></i>
+                        <p class="text-[#64748B]">Your library is empty.</p>
+                        <p class="text-sm mt-1">Download or purchase items to see them here.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            userLibrary.forEach(product => {
+                const card = document.createElement('div');
+                card.className = `product-card bg-[#111827] border border-[#374151] rounded-3xl p-5`;
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <div class="font-semibold text-xl">${product.name}</div>
+                            <div class="text-xs text-[#64748B]">${product.author} • ${product.type.toUpperCase()}</div>
+                        </div>
+                        <span class="text-xs px-3 py-1 rounded-2xl ${product.type === 'plugin' ? 'bg-[#10b981]/10 text-[#10b981]' : 'bg-[#f59e0b]/10 text-[#f59e0b]'}">
+                            ${product.mcVersion}
+                        </span>
+                    </div>
+                    
+                    <div class="text-sm text-[#94A3B8] line-clamp-2 mb-5">${product.desc}</div>
+                    
+                    <div class="flex gap-x-3">
+                        <button onclick="downloadProduct(${product.id})" 
+                                class="flex-1 py-2.5 text-sm font-bold bg-[#10b981] text-[#0A0F1C] rounded-2xl flex justify-center items-center gap-x-2 hover:bg-[#34d399]">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Download</span>
+                        </button>
+                        
+                        <a href="${product.link}" target="_blank" 
+                           class="px-5 py-2.5 text-sm border border-[#374151] hover:bg-[#1F2937] rounded-2xl flex items-center gap-x-2">
+                            <span>Official</span>
+                        </a>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        function hideLibrary() {
+            document.getElementById('library-section').classList.add('hidden');
+        }
+
+        // ==================== CHAT (REAL INTERACTIVE) ====================
+        let chatHistory = [];
+
+        function openChat() {
+            const panel = document.getElementById('chat-panel');
+            panel.classList.remove('hidden');
+            panel.style.display = 'flex';
+            
+            if (chatHistory.length === 0) {
+                // Initial welcome message (Persian default)
+                const welcomeMsg = currentLang === 'fa' 
+                    ? "سلام! من تیم پشتیبانی بازار بلوک هستم. چطور می‌تونم کمکتون کنم؟ درباره دانلودها، پلاگین‌ها، مودها یا هر چیز مرتبط با ماینکرافت بپرسید."
+                    : "Hi there! I'm the Block Bazaar support team. How can I help you today? Ask me about downloads, plugins, mods, or anything Minecraft-related.";
+                addChatMessage('bot', welcomeMsg);
+                
+                // Quick replies
+                setupQuickReplies();
+            }
+        }
+
+        function closeChat() {
+            const panel = document.getElementById('chat-panel');
+            panel.style.display = 'none';
+        }
+
+        function setupQuickReplies() {
+            const container = document.getElementById('quick-replies');
+            const isFa = currentLang === 'fa';
+            
+            if (isFa) {
+                container.innerHTML = `
+                    <button onclick="quickReply('دانلود پلاگین چطور کار می‌کنه؟')" class="text-xs px-3.5 py-1.5 bg-[#1F2937] hover:bg-[#374151] rounded-2xl transition-colors">دانلود چطور کار می‌کنه؟</button>
+                    <button onclick="quickReply('کمک با مود')" class="text-xs px-3.5 py-1.5 bg-[#1F2937] hover:bg-[#374151] rounded-2xl transition-colors">کمک با مود</button>
+                    <button onclick="quickReply('تفاوت پلاگین و مود چیه؟')" class="text-xs px-3.5 py-1.5 bg-[#1F2937] hover:bg-[#374151] rounded-2xl transition-colors">پلاگین vs مود</button>
+                `;
+            } else {
+                container.innerHTML = `
+                    <button onclick="quickReply('How do I download a plugin?')" class="text-xs px-3.5 py-1.5 bg-[#1F2937] hover:bg-[#374151] rounded-2xl transition-colors">How do downloads work?</button>
+                    <button onclick="quickReply('I need help with a mod')" class="text-xs px-3.5 py-1.5 bg-[#1F2937] hover:bg-[#374151] rounded-2xl transition-colors">Help with a mod</button>
+                    <button onclick="quickReply('What is the difference between plugins and mods?')" class="text-xs px-3.5 py-1.5 bg-[#1F2937] hover:bg-[#374151] rounded-2xl transition-colors">Plugins vs Mods</button>
+                `;
+            }
+        }
+
+        function quickReply(text) {
+            const input = document.getElementById('chat-input');
+            input.value = text;
+            sendChatMessage();
+        }
+
+        function addChatMessage(sender, text) {
+            const messagesContainer = document.getElementById('chat-messages');
+            
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `chat-message ${sender === 'user' ? 'chat-user' : 'chat-bot'}`;
+            msgDiv.innerHTML = `<div>${text}</div>`;
+            
+            messagesContainer.appendChild(msgDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            chatHistory.push({ sender, text });
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            addChatMessage('user', text);
+            input.value = '';
+
+            // Simulate typing
+            setTimeout(() => {
+                const reply = generateBotReply(text);
+                addChatMessage('bot', reply);
+            }, 650 + Math.random() * 600);
+        }
+
+        function generateBotReply(userMessage) {
+            const msg = userMessage.toLowerCase();
+            const isFa = currentLang === 'fa';
+            
+            if (msg.includes('دانلود') || msg.includes('jar') || msg.includes('download')) {
+                return isFa 
+                    ? "همه دانلودها ۱۰۰٪ ایمن و مستقیم از منابع رسمی (Modrinth و صفحات پروژه) میان. فقط روی دکمه دانلود کلیک کنید (بعد از ورود). برای آیتم‌های پولی اول پرداخت سریع انجام می‌شه."
+                    : "All downloads are 100% safe and come directly from official sources (Modrinth, official project pages). Just click the Download button on any item after logging in.";
+            }
+            
+            if ((msg.includes('plugin') && msg.includes('mod')) || (msg.includes('پلاگین') && msg.includes('مود'))) {
+                return isFa 
+                    ? "<strong>پلاگین‌ها</strong> روی سرورهای Paper/Purpur اجرا می‌شن (مثل EssentialsX، LuckPerms). <strong>مودها</strong> برای کلاینت یا سرورهای مودشده Fabric/Forge هستن (مثل Sodium، Create، Iris). همه آیتم‌ها برچسب واضح دارن."
+                    : "Great question! <strong>Plugins</strong> run on server software like Paper or Purpur. <strong>Mods</strong> are for the client or modded servers using Fabric/Forge.";
+            }
+            
+            if (msg.includes('پلاگین') || msg.includes('plugin')) {
+                return isFa 
+                    ? "پلاگین‌ها برای سرورهای وانیلا+ عالی هستن. ۱۵ تا از محبوب‌ترین‌ها مثل EssentialsX، LuckPerms، WorldEdit و CoreProtect داریم. همه رایگان هستن به جز GriefPrevention که پریمیومه."
+                    : "Plugins are perfect for vanilla+ servers. We have 15 popular ones including EssentialsX, LuckPerms, WorldEdit, CoreProtect.";
+            }
+            
+            if (msg.includes('مود') || msg.includes('mod')) {
+                return isFa 
+                    ? "۱۵ مود باکیفیت داریم! مودهای عملکردی مثل Sodium، مودهای بصری مثل Iris، اتوماسیون با Create و خیلی بیشتر. بیشترشون کاملاً رایگان هستن."
+                    : "We have 15 high-quality mods! Performance mods like Sodium, visuals like Iris, automation with Create, and many more.";
+            }
+            
+            if (msg.includes('قیمت') || msg.includes('هزینه') || msg.includes('buy') || msg.includes('price')) {
+                return isFa 
+                    ? "اکثر آیتم‌ها کاملاً رایگان هستن. چند تا آیتم پریمیوم (مثل Sophisticated Backpacks) هزینه یک‌باره کوچیکی دارن. همه خریدها دسترسی مادام‌العمر + آپدیت می‌دن."
+                    : "Most items are completely free. A few premium items have a small one-time fee. All purchases give lifetime access + updates.";
+            }
+            
+            if (msg.includes('ورود') || msg.includes('حساب') || msg.includes('login')) {
+                return isFa 
+                    ? "برای دانلود یا خرید باید وارد حساب کاربری بشید. خیلی سریع و فقط چند ثانیه طول می‌کشه. برای ذخیره کتابخانه‌تون استفاده می‌شه."
+                    : "You need to be logged in to download or purchase items. It's quick and keeps track of your library.";
+            }
+            
+            if (msg.includes('سلام') || msg.includes('hi') || msg.includes('hello')) {
+                return isFa ? "سلام! 👋 امروز چطور می‌تونم کمکتون کنم؟" : "Hello! 👋 How can I help you explore the Bazaar today?";
+            }
+            
+            // Default
+            return isFa 
+                ? "ممنون از پیامتون! برای کمک سریع‌تر در مورد آیتم خاص، صفحه جزئیات یا لینک رسمی رو چک کنید. سؤال دیگه‌ای دارید؟"
+                : "Thanks for your message! For the fastest help with a specific item, check its detail page or the official link.";
+        }
+
+        // ==================== TOASTS ====================
+        function showToast(message, type = 'success', duration = 2800) {
+            const container = document.getElementById('toast-container');
+            
+            const colors = {
+                success: 'bg-emerald-900 border-emerald-700 text-emerald-100',
+                info: 'bg-blue-900 border-blue-700 text-blue-100',
+                error: 'bg-red-900 border-red-700 text-red-100'
+            };
+            
+            const icon = {
+                success: 'fa-check-circle',
+                info: 'fa-info-circle',
+                error: 'fa-exclamation-circle'
+            };
+
+            const toast = document.createElement('div');
+            toast.className = `flex items-center gap-x-3 px-5 py-3.5 rounded-3xl border shadow-xl ${colors[type]} max-w-md`;
+            toast.innerHTML = `
+                <i class="fa-solid ${icon[type]} text-lg"></i>
+                <div class="text-sm font-medium">${message}</div>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.transition = 'all 0.25s ease';
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 200);
+            }, duration);
+            
+            return toast;
+        }
+
+        // ==================== INITIALIZATION ====================
+        function initFilters() {
+            // Set initial active states
+            document.getElementById('price-all').classList.add('filter-active');
+            
+            // Initial product render
+            const initialProducts = products.filter(p => p.type === 'plugin');
+            renderProducts(initialProducts);
+            
+            // Update counts
+            document.getElementById('plugin-count').textContent = `(${products.filter(p => p.type === 'plugin').length})`;
+            document.getElementById('mod-count').textContent = `(${products.filter(p => p.type === 'mod').length})`;
+            
+            // Global search sync
+            const globalSearch = document.getElementById('global-search');
+            const storeSearch = document.getElementById('search-input');
+            
+            if (globalSearch && storeSearch) {
+                globalSearch.addEventListener('input', () => {
+                    storeSearch.value = globalSearch.value;
+                    filterProducts();
+                });
+            }
+        }
+
+        function initEverything() {
+            initTailwind();
+            initThreeJS();
+            
+            // Load user if exists
+            checkExistingLogin();
+            
+            // Initialize store
+            initFilters();
+            
+            // Set initial tab active
+            document.getElementById('tab-plugin').classList.add('active');
+            
+            // Random nice touch: occasionally react to hero block
+            setTimeout(() => {
+                const canvas = document.getElementById('hero-canvas');
+                if (canvas) {
+                    canvas.addEventListener('click', () => {
+                        if (cube && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                            cube.scale.set(1.15, 1.15, 1.15);
+                            setTimeout(() => {
+                                if (cube) cube.scale.set(1, 1, 1);
+                            }, 220);
+                        }
+                    });
+                }
+            }, 1200);
+
+            // Keyboard support for search
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+                    e.preventDefault();
+                    const search = document.getElementById('search-input');
+                    if (search) search.focus();
+                }
+            });
+
+            // Welcome toast for first time visitors (demo)
+            setTimeout(() => {
+                if (!localStorage.getItem('blockBazaarUser')) {
+                    // showToast('Tip: Drag the 3D block in the hero to interact!', 'info', 4200);
+                }
+            }, 6500);
+
+            // Make sure mobile menu works (simple)
+            console.log('%c[Block Bazaar] Distinctive Minecraft marketplace frontend initialized successfully.', 'color:#64748B');
+        }
+
+        // Mobile hamburger removed - site is fully responsive with Tailwind
+
+        // Boot the app
+        window.onload = function() {
+            initEverything();
+            initLanguage();
+            
+            // Set initial hero text for Persian default
+            const heroTitle = document.querySelector('#discover h1');
+            if (heroTitle && currentLang === 'fa') {
+                heroTitle.innerHTML = `دنیای خودت.<br><span class="bg-gradient-to-r from-[#10b981] via-[#34d399] to-[#10b981] bg-clip-text text-transparent">دوباره ساخته شد.</span>`;
+            }
+            
+            // Show a helpful toast on first load in Persian
+            setTimeout(() => {
+                if (!localStorage.getItem('blockBazaarUser')) {
+                    // Optional welcome toast - commented to avoid spam
+                    // showToast('زبان سایت فارسی است. برای تغییر به انگلیسی از دکمه FA | EN استفاده کنید.', 'info', 4500);
+                }
+            }, 3000);
+        };
+    </script>
+</body>
+</html>
