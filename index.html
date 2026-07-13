@@ -6,6 +6,7 @@
     <title>بلوک بازار | Minecraft Plugin, Mod &amp; Data Pack Download - دانلود رایگان مود، پلاگین و دیتا پک ماینکرافت 1.21</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="1 (11).png" type="image/png">
     <!-- SEO Optimized Title & Meta -->
     <meta name="description" content="Download free Minecraft plugins, mods and data packs — دانلود رایگان و سریع مودها، پلاگین‌ها و دیتا پک‌های ماینکرافت 1.21+. بهترین سایت ایرانی برای مود Fabric، پلاگین Paper/Spigot و دیتا پک‌های جهان‌سازی با لینک مستقیم Modrinth. کاملاً رایگان، تست‌شده و بدون ویروس.">
     <meta name="keywords" content="minecraft plugin, download mod and data pack, minecraft mod download, minecraft data pack download, free minecraft plugins, minecraft plugin download, fabric mod download, paper spigot plugin, مود ماینکرافت, پلاگین ماینکرافت, دیتا پک ماینکرافت, دانلود مود 1.21, دانلود پلاگین ماینکرافت, دانلود دیتا پک ماینکرافت, مود رایگان ماینکرافت, پلاگین سرور ماینکرافت, دیتا پک رایگان, مود سدیم, مود آیریس, بلوک بازار, ماینکرافت 1.21">
@@ -415,7 +416,7 @@
         <div class="max-w-screen-xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8">
                 <div class="flex items-center gap-x-4">
-                    <div class="text-4xl font-extrabold text-emerald-600 stat-number">15</div>
+                    <div class="text-4xl font-extrabold text-emerald-600 stat-number">18</div>
                     <div>
                         <div class="font-bold">مود و پلاگین</div>
                         <div class="text-xs text-slate-500">همه رایگان</div>
@@ -451,7 +452,7 @@
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-y-4">
             <div>
                 <span class="text-emerald-600 font-bold text-sm tracking-[1.5px] mc-font text-[10px]"></span>
-                <h2 class="text-4xl font-extrabold tracking-tight section-title mt-2">آخرین محصولات</h2>
+                <h2 class="text-4xl font-extrabold tracking-tight section-title mt-2" style="color: snow;">آخرین محصولات</h2>
                 <p class="text-slate-500 mt-3 max-w-xl"></p>
             </div>
             
@@ -461,6 +462,7 @@
                 <button onclick="filterByCategory('مودها')" class="category-tab mc-btn px-5 py-2 text-sm" data-category="مودها">مودها</button>
                 <button onclick="filterByCategory('پلاگین‌ها')" class="category-tab mc-btn px-5 py-2 text-sm" data-category="پلاگین‌ها">پلاگین‌ها</button>
                 <button onclick="filterByCategory('دیتا پک‌ها')" class="category-tab mc-btn px-5 py-2 text-sm" data-category="دیتا پک‌ها">دیتا پک‌ها</button>
+                <button onclick="filterByCategory('ریسورس پک‌ها')" class="category-tab mc-btn px-5 py-2 text-sm" data-category="ریسورس پک‌ها">ریسورس پک‌ها</button>
             </div>
         </div>
         
@@ -717,7 +719,7 @@
 
     <!-- Profile Modal -->
     <div id="profile-modal" onclick="if (event.target.id === 'profile-modal') hideProfileModal()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[120] flex items-center justify-center p-4">
-        <div onclick="event.stopImmediatePropagation()" class="modal bg-white rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl">
             <div id="profile-content"></div>
         </div>
     </div>
@@ -763,189 +765,226 @@
 
     <script>
         // Tailwind + Data
-        let products = [
-            {
-                id: 1,
-                title: "مود Sodium (بهینه‌سازی)",
-                category: "مودها",
-                desc: "بهترین مود بهینه‌سازی برای افزایش فریم‌ریت و عملکرد بازی.",
-                longDesc: "Sodium یکی از محبوب‌ترین مودهای بهینه‌سازی ماینکرافت است که فریم‌ریت را به شدت افزایش می‌دهد. مناسب برای همه پلیرها.",
-                image: "295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
-                downloads: 71,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/AANobbMI/versions/Ny3XyYle/sodium-fabric-0.8.13%2Bmc1.21.11.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 2,
-                title: "دیتا پک Terralith",
-                category: "دیتا پک‌ها",
-                desc: "جهان‌ساز فوق‌العاده واقع‌گرایانه با بیوم‌های جدید و ساختارهای زیبا.",
-                longDesc: "Terralith یکی از بهترین دیتا پک‌های جهان‌سازی است که بیوم‌ها، کوه‌ها و ساختارها را کاملاً تغییر می‌دهد.",
-                image: "1959d924a1088944bbf07a06ba523726112d7e7a_96.webp",
-                downloads: 13,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/8oi3bsk5/versions/vVdNToqE/Terralith_1.21.11_v2.6.1_Fabric.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 3,
-                title: "مود Iris Shaders",
-                category: "مودها",
-                desc: "پشتیبانی از شیدرهای زیبا و پیشرفته برای گرافیک بهتر.",
-                longDesc: "Iris بهترین مود شیدر برای ماینکرافت است که با Sodium سازگار است و گرافیک بازی را به سطح جدیدی می‌برد.",
-                image: "18d0e7f076d3d6ed5bedd472b853909aac5da202_96.webp",
-                downloads: 7,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/YL57xq9U/versions/fDpuVzVr/iris-fabric-1.10.7%2Bmc1.21.11.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 4,
-                title: "دیتا پک Vanilla Refresh",
-                category: "دیتا پک‌ها",
-                desc: "بهبودهای کوچک اما کاربردی برای تجربه بهتر بازی ونilla.",
-                longDesc: "Vanilla Refresh کیفیت زندگی را با ویژگی‌های کوچک مثل نشستن بازیکن، شمارنده روز و ... بهبود می‌بخشد.",
-                image: "4d6ac282afe713a4413cc8f230942c61a1b3c6e0_96.webp",
-                downloads: 3,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/gWO6Zqey/versions/guwB9g3K/vanilla-refresh-1.4.31.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=forge"
-            },
-            {
-                id: 5,
-                title: "مود Fabric API",
-                category: "مودها",
-                desc: "کتابخانه اصلی برای اکثر مودهای Fabric — ضروری برای نصب مودها.",
-                longDesc: "Fabric API کتابخانه پایه برای اکثر مودهای Fabric است. بدون آن بسیاری از مودها کار نمی‌کنند.",
-                image: "icon.png",
-                downloads: 93,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/P7dR8mSH/versions/5zJNhXV2/fabric-api-0.141.4%2B1.21.11.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 6,
-                title: "دیتا پک Dungeons and Taverns",
-                category: "دیتا پک‌ها",
-                desc: "افزودن سیاه‌چال‌ها، میخانه‌ها و ساختارهای جدید به جهان.",
-                longDesc: "دیتا پک عالی برای اضافه کردن ساختارهای ماجراجویی و سیاه‌چال‌های جدید به بازی.",
-                image: "429ba22d212868940cdd82465df949ac51c9791e_96.webp",
-                downloads: 71,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/tpehi7ww/versions/rJ0Y6xDT/dungeons-and-taverns-v5.1.0.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 7,
-                title: "مود Cloth Config API",
-                category: "مودها",
-                desc: "کتابخانه تنظیمات برای مودها — مورد نیاز بسیاری از مودهای مدرن.",
-                longDesc: "Cloth Config API کتابخانه‌ای برای ایجاد منوهای تنظیمات زیبا در مودها است.",
-                image: "ed8a2316cbb6f4fc5f510e8e13a59a85cbbbff4d_96.webp",
-                downloads: 41,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/9s6osm5g/versions/xuX40TN5/cloth-config-21.11.153-fabric.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 8,
-                title: "دیتا پک Nice Mobs Remastered",
-                category: "دیتا پک‌ها",
-                desc: "بهبود ظاهر و رفتار موجودات بازی با مدل‌ها و انیمیشن‌های جدید.",
-                longDesc: "این دیتا پک موجودات بازی را زیباتر و واقعی‌تر می‌کند.",
-                image: "0c252423c0c5bba9f88c4b7c5f9d4e7b303954dd_96.webp",
-                downloads: 56,
-                version: "1.21.1",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/hxerjRLt/versions/rPdXAqIj/nice-mobs-remastered-2.5b.jar?mr_download_reason=standalone&mr_game_version=1.21.1&mr_loader=fabric"
-            },
-            {
-                id: 9,
-                title: "مود LuckPerms (مدیریت مجوزها)",
-                category: "پلاگین‌ها",
-                desc: "سیستم مدیریت مجوزها و رتبه‌های حرفه‌ای برای سرورها.",
-                longDesc: "LuckPerms بهترین سیستم مدیریت مجوزها برای سرورهای ماینکرافت است.",
-                image: "90943902cc650e95b167265b8f2d7c893f82c8f4_96.webp",
-                downloads: 145,
-                version: "Paper/Spigot",
-                size: "متغیر",
-                modrinthUrl: "https://modrinth.com/plugin/luckperms",
-                directDownloadUrl: "https://cdn.modrinth.com/data/Vebnzrzj/versions/MBSY8toc/LuckPerms-Bukkit-5.5.53.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=paper"
-            },
-            {
-                id: 10,
-                title: "مود Lithium (بهینه‌سازی)",
-                category: "مودها",
-                desc: "بهینه‌سازی عمیق منطق بازی برای کاهش لگ و افزایش عملکرد.",
-                longDesc: "Lithium مود بهینه‌سازی قدرتمند است که تغییرات عمیقی در منطق بازی ایجاد می‌کند تا فریم‌ریت و عملکرد را افزایش دهد. سازگار با Sodium.",
-                image: "bcc8686c13af0143adf4285d741256af824f70b7_96.webp",
-                downloads: 52,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/gvQqBUqZ/versions/Ow7wA0kG/lithium-fabric-0.21.4%2Bmc1.21.11.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 11,
-                title: "مود Mod Menu",
-                category: "مودها",
-                desc: "منوی مدیریت مودها برای مشاهده لیست و تنظیمات آسان.",
-                longDesc: "Mod Menu مود ضروری Fabric است که لیست تمام مودها را در منوی بازی نشان می‌دهد و امکان پیکربندی سریع را فراهم می‌کند.",
-                image: "5a20ed1450a0e1e79a1fe04e61bb4e5878bf1d20.png",
-                downloads: 78,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/mOgUt4GM/versions/Tyk71iSw/modmenu-17.0.0.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 12,
-                title: "مود Waystones",
-                category: "مودها",
-                desc: "سنگ‌های راهنما برای تلپورت سریع بین مکان‌های دلخواه.",
-                longDesc: "با Waystones می‌توانید سنگ‌های راهنما بسازید و بین آن‌ها تلپورت کنید. عالی برای سرورهای بقا و جهان‌های بزرگ.",
-                image: "d56c030a875582aff5bab477ddcfec317a1610f0_96.png",
-                downloads: 41,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/LOpKHB2A/versions/MydMW2TT/waystones-fabric-1.21.11-21.11.9.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 13,
-                title: "دیتا پک Towns and Towers",
-                category: "دیتا پک‌ها",
-                desc: "شهرها، روستاها و برج‌های جدید و زیبا به جهان اضافه می‌کند.",
-                longDesc: "این دیتا پک ساختارهای جذابی مثل towns و towers را به بازی اضافه می‌کند و اکتشاف را هیجان‌انگیزتر می‌کند.",
-                image: "f7f552ec019c9ad8b777c9ab5eecbb95da8707a0_96.webp",
-                downloads: 29,
-                version: "1.21+",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/DjLobEOy/versions/qb0cwwDT/t_and_t-fabric-neoforge-1.13.9.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            },
-            {
-                id: 14,
-                title: "پلاگین EssentialsX",
-                category: "پلاگین‌ها",
-                desc: "پلاگین جامع سرور با دستورات پایه، اقتصاد و مدیریت بازیکنان.",
-                longDesc: "EssentialsX محبوب‌ترین پلاگین برای سرورهای Paper/Spigot است که teleport، economy، kits و صدها دستور مفید اضافه می‌کند.",
-                image: "e621675be1d0421b43b65ab8082507532d937009_96.webp",
-                downloads: 98,
-                version: "Paper/Spigot",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/hXiIvTyT/versions/nY6VN1XH/EssentialsX-2.22.0.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=paper"
-            },
-            {
-                id: 15,
-                title: "پلاگین WorldEdit",
-                category: "پلاگین‌ها",
-                desc: "ابزار حرفه‌ای ویرایش جهان برای ساخت و ساز سریع.",
-                longDesc: "WorldEdit به شما اجازه می‌دهد با دستورات سریع بلاک‌ها را ویرایش، کپی و ساختارهای عظیم بسازید. ضروری برای ادمین‌های سرور.",
-                image: "30698991048ced77e60c4e8284007d3782f2e6a3_96.webp",
-                downloads: 76,
-                version: "Paper/Spigot",
-                size: "متغیر",
-                modrinthUrl: "https://cdn.modrinth.com/data/1u6JkXh5/versions/oY3E2pzA/worldedit-mod-7.4.2.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
-            }
-        ]
+        // Tailwind + Data
+let products = [
+    {
+        id: 1,
+        title: "مود Sodium (بهینه‌سازی)",
+        category: "مودها",
+        desc: "بهترین مود بهینه‌سازی برای افزایش فریم‌ریت و عملکرد بازی.",
+        longDesc: "Sodium یکی از محبوب‌ترین مودهای بهینه‌سازی ماینکرافت است که فریم‌ریت را به شدت افزایش می‌دهد. مناسب برای همه پلیرها.",
+        image: "295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
+        downloads: 71,
+        version: "1.21+",
+        size: "1.8MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/AANobbMI/versions/Ny3XyYle/sodium-fabric-0.8.13%2Bmc1.21.11.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 2,
+        title: "دیتا پک Terralith",
+        category: "دیتا پک‌ها",
+        desc: "جهان‌ساز فوق‌العاده واقع‌گرایانه با بیوم‌های جدید و ساختارهای زیبا.",
+        longDesc: "Terralith یکی از بهترین دیتا پک‌های جهان‌سازی است که بیوم‌ها، کوه‌ها و ساختارها را کاملاً تغییر می‌دهد.",
+        image: "1959d924a1088944bbf07a06ba523726112d7e7a_96.webp",
+        downloads: 13,
+        version: "1.21+",
+        size: "2.8MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/8oi3bsk5/versions/vVdNToqE/Terralith_1.21.11_v2.6.1_Fabric.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 3,
+        title: "مود Iris Shaders",
+        category: "مودها",
+        desc: "پشتیبانی از شیدرهای زیبا و پیشرفته برای گرافیک بهتر.",
+        longDesc: "Iris بهترین مود شیدر برای ماینکرافت است که با Sodium سازگار است و گرافیک بازی را به سطح جدیدی می‌برد.",
+        image: "18d0e7f076d3d6ed5bedd472b853909aac5da202_96.webp",
+        downloads: 7,
+        version: "1.21+",
+        size: "2.7MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/YL57xq9U/versions/fDpuVzVr/iris-fabric-1.10.7%2Bmc1.21.11.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 4,
+        title: "دیتا پک Vanilla Refresh",
+        category: "دیتا پک‌ها",
+        desc: "بهبودهای کوچک اما کاربردی برای تجربه بهتر بازی ونilla.",
+        longDesc: "Vanilla Refresh کیفیت زندگی را با ویژگی‌های کوچک مثل نشستن بازیکن، شمارنده روز و ... بهبود می‌بخشد.",
+        image: "4d6ac282afe713a4413cc8f230942c61a1b3c6e0_96.webp",
+        downloads: 3,
+        version: "1.21+",
+        size: "1.2MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/gWO6Zqey/versions/guwB9g3K/vanilla-refresh-1.4.31.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=forge"
+    },
+    {
+        id: 5,
+        title: "مود Fabric API",
+        category: "مودها",
+        desc: "کتابخانه اصلی برای اکثر مودهای Fabric — ضروری برای نصب مودها.",
+        longDesc: "Fabric API کتابخانه پایه برای اکثر مودهای Fabric است. بدون آن بسیاری از مودها کار نمی‌کنند.",
+        image: "icon.png",
+        downloads: 93,
+        version: "1.21+",
+        size: "4.5MB",  // معمولاً حدود 4-5 مگابایت
+        modrinthUrl: "https://cdn.modrinth.com/data/P7dR8mSH/versions/5zJNhXV2/fabric-api-0.141.4%2B1.21.11.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 6,
+        title: "دیتا پک Dungeons and Taverns",
+        category: "دیتا پک‌ها",
+        desc: "افزودن سیاه‌چال‌ها، میخانه‌ها و ساختارهای جدید به جهان.",
+        longDesc: "دیتا پک عالی برای اضافه کردن ساختارهای ماجراجویی و سیاه‌چال‌های جدید به بازی.",
+        image: "429ba22d212868940cdd82465df949ac51c9791e_96.webp",
+        downloads: 71,
+        version: "1.21+",
+        size: "18MB",  // نسخه‌های جدیدش بزرگتر است
+        modrinthUrl: "https://cdn.modrinth.com/data/tpehi7ww/versions/rJ0Y6xDT/dungeons-and-taverns-v5.1.0.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 7,
+        title: "مود Cloth Config API",
+        category: "مودها",
+        desc: "کتابخانه تنظیمات برای مودها — مورد نیاز بسیاری از مودهای مدرن.",
+        longDesc: "Cloth Config API کتابخانه‌ای برای ایجاد منوهای تنظیمات زیبا در مودها است.",
+        image: "ed8a2316cbb6f4fc5f510e8e13a59a85cbbbff4d_96.webp",
+        downloads: 41,
+        version: "1.21+",
+        size: "0.8MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/9s6osm5g/versions/xuX40TN5/cloth-config-21.11.153-fabric.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 8,
+        title: "دیتا پک Nice Mobs Remastered",
+        category: "دیتا پک‌ها",
+        desc: "بهبود ظاهر و رفتار موجودات بازی با مدل‌ها و انیمیشن‌های جدید.",
+        longDesc: "این دیتا پک موجودات بازی را زیباتر و واقعی‌تر می‌کند.",
+        image: "0c252423c0c5bba9f88c4b7c5f9d4e7b303954dd_96.webp",
+        downloads: 56,
+        version: "1.21.1",
+        size: "1.1MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/hxerjRLt/versions/rPdXAqIj/nice-mobs-remastered-2.5b.jar?mr_download_reason=standalone&mr_game_version=1.21.1&mr_loader=fabric"
+    },
+    {
+        id: 9,
+        title: "پلاگین LuckPerms (مدیریت مجوزها)",
+        category: "پلاگین‌ها",
+        desc: "سیستم مدیریت مجوزها و رتبه‌های حرفه‌ای برای سرورها.",
+        longDesc: "LuckPerms بهترین سیستم مدیریت مجوزها برای سرورهای ماینکرافت است.",
+        image: "90943902cc650e95b167265b8f2d7c893f82c8f4_96.webp",
+        downloads: 145,
+        version: "Paper/Spigot",
+        size: "2.2MB",
+        modrinthUrl: "https://modrinth.com/plugin/luckperms",
+        directDownloadUrl: "https://cdn.modrinth.com/data/Vebnzrzj/versions/MBSY8toc/LuckPerms-Bukkit-5.5.53.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=paper"
+    },
+    {
+        id: 10,
+        title: "مود Lithium (بهینه‌سازی)",
+        category: "مودها",
+        desc: "بهینه‌سازی عمیق منطق بازی برای کاهش لگ و افزایش عملکرد.",
+        longDesc: "Lithium مود بهینه‌سازی قدرتمند است که تغییرات عمیقی در منطق بازی ایجاد می‌کند تا فریم‌ریت و عملکرد را افزایش دهد. سازگار با Sodium.",
+        image: "bcc8686c13af0143adf4285d741256af824f70b7_96.webp",
+        downloads: 52,
+        version: "1.21+",
+        size: "0.9MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/gvQqBUqZ/versions/Ow7wA0kG/lithium-fabric-0.21.4%2Bmc1.21.11.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 11,
+        title: "مود Mod Menu",
+        category: "مودها",
+        desc: "منوی مدیریت مودها برای مشاهده لیست و تنظیمات آسان.",
+        longDesc: "Mod Menu مود ضروری Fabric است که لیست تمام مودها را در منوی بازی نشان می‌دهد و امکان پیکربندی سریع را فراهم می‌کند.",
+        image: "5a20ed1450a0e1e79a1fe04e61bb4e5878bf1d20.png",
+        downloads: 78,
+        version: "1.21+",
+        size: "1.1MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/mOgUt4GM/versions/Tyk71iSw/modmenu-17.0.0.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 12,
+        title: "مود Waystones",
+        category: "مودها",
+        desc: "سنگ‌های راهنما برای تلپورت سریع بین مکان‌های دلخواه.",
+        longDesc: "با Waystones می‌توانید سنگ‌های راهنما بسازید و بین آن‌ها تلپورت کنید. عالی برای سرورهای بقا و جهان‌های بزرگ.",
+        image: "d56c030a875582aff5bab477ddcfec317a1610f0_96.png",
+        downloads: 41,
+        version: "1.21+",
+        size: "1.2MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/LOpKHB2A/versions/MydMW2TT/waystones-fabric-1.21.11-21.11.9.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 13,
+        title: "دیتا پک Towns and Towers",
+        category: "دیتا پک‌ها",
+        desc: "شهرها، روستاها و برج‌های جدید و زیبا به جهان اضافه می‌کند.",
+        longDesc: "این دیتا پک ساختارهای جذابی مثل towns و towers را به بازی اضافه می‌کند و اکتشاف را هیجان‌انگیزتر می‌کند.",
+        image: "f7f552ec019c9ad8b777c9ab5eecbb95da8707a0_96.webp",
+        downloads: 29,
+        version: "1.21+",
+        size: "3.5MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/DjLobEOy/versions/qb0cwwDT/t_and_t-fabric-neoforge-1.13.9.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 14,
+        title: "پلاگین EssentialsX",
+        category: "پلاگین‌ها",
+        desc: "پلاگین جامع سرور با دستورات پایه، اقتصاد و مدیریت بازیکنان.",
+        longDesc: "EssentialsX محبوب‌ترین پلاگین برای سرورهای Paper/Spigot است که teleport، economy، kits و صدها دستور مفید اضافه می‌کند.",
+        image: "e621675be1d0421b43b65ab8082507532d937009_96.webp",
+        downloads: 98,
+        version: "Paper/Spigot",
+        size: "4.8MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/hXiIvTyT/versions/nY6VN1XH/EssentialsX-2.22.0.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=paper"
+    },
+    {
+        id: 15,
+        title: "پلاگین WorldEdit",
+        category: "پلاگین‌ها",
+        desc: "ابزار حرفه‌ای ویرایش جهان برای ساخت و ساز سریع.",
+        longDesc: "WorldEdit به شما اجازه می‌دهد با دستورات سریع بلاک‌ها را ویرایش، کپی و ساختارهای عظیم بسازید. ضروری برای ادمین‌های سرور.",
+        image: "30698991048ced77e60c4e8284007d3782f2e6a3_96.webp",
+        downloads: 76,
+        version: "Paper/Spigot",
+        size: "6.5MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/1u6JkXh5/versions/oY3E2pzA/worldedit-mod-7.4.2.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
+    },
+    {
+        id: 16,
+        title: "ریسورس پک X-Ray (Spectator)",
+        category: "ریسورس پک‌ها",
+        desc: "دیدن سنگ‌های معدنی از پشت بلاک‌ها هنگام روح‌بازی (Spectator) - بدون تقلب در گیم‌پلی.",
+        longDesc: "این ریسورس پک فقط در حالت Spectator فعال می‌شود و امکان دیدن سنگ‌های معدنی از پشت بلاک‌ها را می‌دهد. مناسب برای پیدا کردن تقلب‌کننده‌ها در سرور یا تجربه بهتر در حالت‌هایی مثل UHC. هیچ مزیت ناعادلانه‌ای در حین بازی معمولی ایجاد نمی‌کند.",
+        image: "4ae5ff97cec3ed2c62f07ce0a4984b7fbc78c2d9_96.webp",
+        downloads: 19,
+        version: "1.21+",
+        size: "0.5MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/u6RWzf7M/versions/uLQMkfCi/%C2%A7b%C2%A7lSpectator%20Xray%20%C2%A77v1.2.1.zip?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=minecraft"
+    },
+    {
+        id: 17,
+        title: "ریسورس پک Night Vision",
+        category: "ریسورس پک‌ها",
+        desc: "روشن‌تر کردن محیط در شب و غارها بدون نیاز به پوشن؛ دید بسیار بهتر در تاریکی.",
+        longDesc: "این ریسورس پک با استفاده از لایت‌مپ سفارشی، محیط شب و غارها را روشن‌تر می‌کند تا کاوش در تاریکی راحت‌تر شود. برای استفاده کامل نیاز به OptiFine یا Polytone دارد.",
+        image: "848556b5af8de6012888fd9535fdc6f38b113a87_96.webp",
+        downloads: 24,
+        version: "1.21+",
+        size: "0.3MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/sA6eDnQN/versions/9tBql5hP/Night%20Vision%20v2.0.1%2B42.84.zip?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=minecraft"
+    },
+    {
+        id: 18,
+        title: "ریسورس پک Low On Fire",
+        category: "ریسورس پک‌ها",
+        desc: "کوچک کردن جلوه آتش روی صفحه هنگام آتش گرفتن، برای دید بهتر در نبرد و اکتشاف.",
+        longDesc: "وقتی آتش می‌گیرید، این پک به‌جای پوشاندن کل صفحه با شعله، فقط بخش کوچکی از تصویر را تحت تاثیر قرار می‌دهد. کاملاً وانیلا-فرندلی و بدون تاثیر روی مکانیزم آسیب آتش.",
+        image: "06a7e7691a6da41798c255108a8563d7ffea171d.png",
+        downloads: 31,
+        version: "1.21+",
+        size: "0.4MB",
+        modrinthUrl: "https://cdn.modrinth.com/data/RRxvWKNC/versions/yQdcUfnr/LowOnFire%20v26.2%C2%A78.zip?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=minecraft"
+    }
+]
         
         let currentFilter = 'همه'
         let currentSearch = ''
@@ -996,7 +1035,7 @@
                 const cardHTML = `
                     <div onclick="showProductModal(${product.id})" class="product-card mc-card overflow-hidden cursor-pointer group">
                         <div class="relative h-48 overflow-hidden bg-slate-100 border-b-4 border-black">
-                            <img src="${product.image}" alt="دانلود ${product.title} - Minecraft ${product.category === 'پلاگین‌ها' ? 'plugin' : product.category === 'دیتا پک‌ها' ? 'data pack' : 'mod'} download" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="${product.image}" alt="دانلود ${product.title} - Minecraft ${product.category === 'پلاگین‌ها' ? 'plugin' : product.category === 'دیتا پک‌ها' ? 'data pack' : product.category === 'ریسورس پک‌ها' ? 'resource pack' : 'mod'} download" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             
                             <div class="absolute top-4 right-4">
                                 <div class="mc-badge product-badge flex items-center gap-x-1.5 px-3.5 py-1 shadow">
@@ -1409,7 +1448,7 @@
                     loggedIn: true,
                     points: 2450,
                     level: 'معمولی',
-                    joinDate: ':(',
+                    joinDate: 'چند ماه پیش',
                     downloadsCount: 2,
                     purchasesCount: 0
                 }
@@ -1500,81 +1539,282 @@
         }
         
         // Profile Modal
+        const TIERS = [
+            { key: 'common',  name: 'عادی',    min: 0,    icon: 'fa-shield-halved', color: '#64748b', bg: 'bg-slate-100',   text: 'text-slate-600' },
+            { key: 'bronze',  name: 'برنز',    min: 500,  icon: 'fa-award',         color: '#b45309', bg: 'bg-amber-100',   text: 'text-amber-700' },
+            { key: 'silver',  name: 'نقره‌ای',  min: 1500, icon: 'fa-medal',         color: '#94a3b8', bg: 'bg-slate-200',   text: 'text-slate-600' },
+            { key: 'gold',    name: 'طلایی',   min: 3000, icon: 'fa-trophy',        color: '#ca8a04', bg: 'bg-yellow-100',  text: 'text-yellow-700' },
+            { key: 'diamond', name: 'الماسی',  min: 6000, icon: 'fa-gem',           color: '#0891b2', bg: 'bg-cyan-100',    text: 'text-cyan-700' },
+        ]
+
+        function getTierInfo(points) {
+            let current = TIERS[0]
+            let next = null
+            for (let i = 0; i < TIERS.length; i++) {
+                if (points >= TIERS[i].min) current = TIERS[i]
+                else { next = TIERS[i]; break }
+            }
+            const progressPct = next ? Math.min(100, Math.round(((points - current.min) / (next.min - current.min)) * 100)) : 100
+            return { current, next, progressPct }
+        }
+
+        function getDownloadHistory(user) {
+            const key = 'blockmarket_downloads_' + user.email
+            const saved = localStorage.getItem(key)
+            if (saved) return JSON.parse(saved)
+
+            const count = user.downloadsCount || 0
+            const pool = (typeof products !== 'undefined' && products.length) ? products : []
+            const history = pool.slice(0, count).map((p, i) => ({
+                title: p.title,
+                category: p.category,
+                date: i === 0 ? 'امروز' : i === 1 ? 'دیروز' : 'چند روز پیش'
+            }))
+            localStorage.setItem(key, JSON.stringify(history))
+            return history
+        }
+
+        function getWishlist(user) {
+            const key = 'blockmarket_wishlist_' + user.email
+            const saved = localStorage.getItem(key)
+            return saved ? JSON.parse(saved) : []
+        }
+
+        function getAchievements(user) {
+            return [
+                { name: 'اولین قدم', desc: 'اولین دانلود خود را انجام دهید', icon: 'fa-flag', unlocked: user.downloadsCount >= 1 },
+                { name: 'کلکسیونر', desc: '۵ محصول دانلود کنید', icon: 'fa-boxes-stacked', unlocked: user.downloadsCount >= 5 },
+                { name: 'حامی بازار', desc: 'اولین خرید خود را ثبت کنید', icon: 'fa-heart', unlocked: user.purchasesCount >= 1 },
+                { name: 'عضو باشگاه', desc: '۵۰۰ امتیاز جمع کنید', icon: 'fa-star', unlocked: user.points >= 500 },
+            ]
+        }
+
+        function copyReferralCode(email) {
+            const code = (email.split('@')[0] || 'USER').toUpperCase().slice(0, 8) + '-' + (email.length * 7 % 900 + 100)
+            const done = () => showToast('کد معرفی کپی شد: ' + code)
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(done).catch(done)
+            } else {
+                done()
+            }
+        }
+
+        function resetAccountData() {
+            const userStr = localStorage.getItem('blockmarket_user')
+            if (!userStr) return
+            const user = JSON.parse(userStr)
+            localStorage.removeItem('blockmarket_downloads_' + user.email)
+            localStorage.removeItem('blockmarket_wishlist_' + user.email)
+            showToast('داده‌های حساب بازنشانی شد.')
+            showProfileModal()
+        }
+
         function showProfileModal() {
             const userStr = localStorage.getItem('blockmarket_user')
             if (!userStr) {
                 showLoginModal()
                 return
             }
-            
+
             const user = JSON.parse(userStr)
             const modal = document.getElementById('profile-modal')
             const content = document.getElementById('profile-content')
-            
+            const tier = getTierInfo(user.points || 0)
+            const history = getDownloadHistory(user)
+            const wishlist = getWishlist(user)
+            const achievements = getAchievements(user)
+            const unlockedCount = achievements.filter(a => a.unlocked).length
+
+            const categoryIcon = (cat) => {
+                if (!cat) return 'fa-cube'
+                if (cat.includes('پلاگین')) return 'fa-plug'
+                if (cat.includes('دیتا')) return 'fa-map'
+                return 'fa-cubes'
+            }
+
+            const downloadsListHTML = history.length ? history.map(h => `
+                <div class="flex items-center gap-x-3 p-3 bg-slate-50 rounded-2xl">
+                    <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas ${categoryIcon(h.category)}"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="font-bold text-sm truncate">${h.title}</div>
+                        <div class="text-xs text-slate-400">${h.category} • ${h.date}</div>
+                    </div>
+                    <button onclick="showToast('دانلود مجدد ${h.title} آغاز شد.')" class="text-xs font-bold text-emerald-600 hover:bg-emerald-50 px-3 py-2 rounded-xl flex-shrink-0">
+                        <i class="fas fa-download"></i>
+                    </button>
+                </div>
+            `).join('') : `
+                <div class="text-center py-10">
+                    <i class="fas fa-inbox text-3xl text-slate-300"></i>
+                    <div class="text-sm text-slate-400 mt-3">هنوز چیزی دانلود نکرده‌اید.</div>
+                    <button onclick="hideProfileModal()" class="mt-4 text-xs font-bold text-emerald-600 border border-emerald-200 hover:bg-emerald-50 px-4 py-2 rounded-2xl">مشاهده محصولات</button>
+                </div>
+            `
+
+            const wishlistListHTML = wishlist.length ? wishlist.map(w => `
+                <div class="flex items-center gap-x-3 p-3 bg-slate-50 rounded-2xl">
+                    <div class="w-10 h-10 bg-rose-100 text-rose-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="font-bold text-sm truncate">${w.title}</div>
+                        <div class="text-xs text-slate-400">${w.category || ''}</div>
+                    </div>
+                </div>
+            `).join('') : `
+                <div class="text-center py-10">
+                    <i class="fas fa-heart-crack text-3xl text-slate-300"></i>
+                    <div class="text-sm text-slate-400 mt-3">لیست علاقه‌مندی‌های شما خالی است.</div>
+                    <button onclick="hideProfileModal()" class="mt-4 text-xs font-bold text-emerald-600 border border-emerald-200 hover:bg-emerald-50 px-4 py-2 rounded-2xl">پیدا کردن محصولات جدید</button>
+                </div>
+            `
+
+            const achievementsHTML = achievements.map(a => `
+                <div class="flex items-center gap-x-3 p-3 rounded-2xl border ${a.unlocked ? 'border-emerald-200 bg-emerald-50' : 'border-slate-100 bg-slate-50 opacity-50'}">
+                    <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 ${a.unlocked ? 'bg-emerald-500 text-white' : 'bg-slate-200 text-slate-400'}">
+                        <i class="fas ${a.unlocked ? a.icon : 'fa-lock'} text-sm"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="font-bold text-xs truncate ${a.unlocked ? 'text-emerald-700' : 'text-slate-500'}">${a.name}</div>
+                        <div class="text-[10px] text-slate-400 truncate">${a.desc}</div>
+                    </div>
+                </div>
+            `).join('')
+
+            const tierLadderHTML = TIERS.map(t => `
+                <div class="flex-1 text-center">
+                    <div class="w-10 h-10 mx-auto rounded-full flex items-center justify-center ${t.min <= (user.points || 0) ? t.bg + ' ' + t.text : 'bg-slate-100 text-slate-300'}">
+                        <i class="fas ${t.icon}"></i>
+                    </div>
+                    <div class="text-[10px] mt-1.5 font-bold ${t.min <= (user.points || 0) ? 'text-slate-700' : 'text-slate-300'}">${t.name}</div>
+                    <div class="text-[9px] text-slate-400">${t.min}+</div>
+                </div>
+            `).join('')
+
             content.innerHTML = `
                 <div>
                     <!-- Profile Header -->
                     <div class="bg-gradient-to-br from-emerald-600 to-teal-600 px-8 pt-8 pb-6 text-white">
                         <div class="flex items-center gap-x-4">
-                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-3xl font-extrabold flex-shrink-0">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-3xl font-extrabold flex-shrink-0 ring-2 ring-white/40">
                                 ${user.name ? user.name[0] : 'U'}
                             </div>
                             <div class="flex-1 min-w-0">
-                                <div class="font-extrabold text-2xl">${user.name}</div>
-                                <div class="text-emerald-200 text-sm">${user.email}</div>
-                                
+                                <div class="font-extrabold text-2xl truncate">${user.name}</div>
+                                <div class="text-emerald-200 text-sm truncate">${user.email}</div>
+
                                 <div class="mt-2 inline-flex items-center gap-x-2 bg-white/20 px-3 py-1 rounded-2xl text-xs">
-                                    <i class="fas fa-medal"></i>
-                                    <span class="font-bold">سطح ${user.level}</span>
+                                    <i class="fas ${tier.current.icon}"></i>
+                                    <span class="font-bold">سطح ${tier.current.name}</span>
                                 </div>
                             </div>
-                            
-                            <button onclick="logoutUser()" class="text-xs bg-white/20 hover:bg-white/30 px-4 py-2 rounded-2xl transition-colors">خروج</button>
+
+                            <button onclick="logoutUser()" class="text-xs bg-white/20 hover:bg-white/30 px-4 py-2 rounded-2xl transition-colors flex-shrink-0">خروج</button>
+                        </div>
+
+                        <!-- XP Progress -->
+                        <div class="mt-5">
+                            <div class="flex justify-between text-[11px] text-emerald-100 mb-1.5">
+                                <span>${tier.next ? tier.next.min - (user.points || 0) + ' امتیاز تا سطح ' + tier.next.name : 'شما به بالاترین سطح رسیده‌اید!'}</span>
+                                <span>${user.points || 0} امتیاز</span>
+                            </div>
+                            <div class="h-2 bg-black/20 rounded-full overflow-hidden">
+                                <div class="h-full bg-white rounded-full transition-all duration-700" style="width: ${tier.progressPct}%"></div>
+                            </div>
                         </div>
                     </div>
-                    
+
                     <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-px bg-slate-100 p-px">
+                    <div class="grid grid-cols-4 gap-px bg-slate-100 p-px">
                         <div class="bg-white p-4 text-center">
-                            <div class="text-2xl font-extrabold text-emerald-600">${user.points}</div>
-                            <div class="text-xs text-slate-500">امتیاز</div>
+                            <div class="text-xl font-extrabold text-emerald-600">${user.points || 0}</div>
+                            <div class="text-[11px] text-slate-500">امتیاز</div>
                         </div>
                         <div class="bg-white p-4 text-center">
-                            <div class="text-2xl font-extrabold text-emerald-600">${user.downloadsCount}</div>
-                            <div class="text-xs text-slate-500">دانلود</div>
+                            <div class="text-xl font-extrabold text-emerald-600">${user.downloadsCount || 0}</div>
+                            <div class="text-[11px] text-slate-500">دانلود</div>
                         </div>
                         <div class="bg-white p-4 text-center">
-                            <div class="text-2xl font-extrabold text-emerald-600">${user.purchasesCount}</div>
-                            <div class="text-xs text-slate-500">خرید</div>
+                            <div class="text-xl font-extrabold text-emerald-600">${user.purchasesCount || 0}</div>
+                            <div class="text-[11px] text-slate-500">خرید</div>
+                        </div>
+                        <div class="bg-white p-4 text-center">
+                            <div class="text-xl font-extrabold text-emerald-600">${unlockedCount}/${achievements.length}</div>
+                            <div class="text-[11px] text-slate-500">نشان‌ها</div>
                         </div>
                     </div>
-                    
+
                     <!-- Tabs -->
                     <div class="px-6 pt-6">
-                        <div class="flex border-b text-sm font-medium">
-                            <div onclick="switchProfileTab(this, 'downloads')" class="profile-tab active px-5 pb-3 border-b-2 border-emerald-600 text-emerald-600 cursor-pointer">تاریخچه دانلود</div>
-                            <div onclick="switchProfileTab(this, 'club')" class="profile-tab px-5 pb-3 text-slate-500 hover:text-slate-700 cursor-pointer">باشگاه مشتریان</div>
-                            <div onclick="switchProfileTab(this, 'settings')" class="profile-tab px-5 pb-3 text-slate-500 hover:text-slate-700 cursor-pointer">تنظیمات</div>
+                        <div class="flex border-b text-sm font-medium gap-x-1 overflow-x-auto">
+                            <div onclick="switchProfileTab(this, 'dashboard')" class="profile-tab active px-4 pb-3 border-b-2 border-emerald-600 text-emerald-600 cursor-pointer whitespace-nowrap"><i class="fas fa-gauge-high ml-1.5"></i>داشبورد</div>
+                            <div onclick="switchProfileTab(this, 'downloads')" class="profile-tab px-4 pb-3 text-slate-500 hover:text-slate-700 cursor-pointer whitespace-nowrap"><i class="fas fa-download ml-1.5"></i>دانلودها</div>
+                            <div onclick="switchProfileTab(this, 'wishlist')" class="profile-tab px-4 pb-3 text-slate-500 hover:text-slate-700 cursor-pointer whitespace-nowrap"><i class="fas fa-heart ml-1.5"></i>علاقه‌مندی‌ها</div>
+                            <div onclick="switchProfileTab(this, 'club')" class="profile-tab px-4 pb-3 text-slate-500 hover:text-slate-700 cursor-pointer whitespace-nowrap"><i class="fas fa-trophy ml-1.5"></i>باشگاه</div>
+                            <div onclick="switchProfileTab(this, 'settings')" class="profile-tab px-4 pb-3 text-slate-500 hover:text-slate-700 cursor-pointer whitespace-nowrap"><i class="fas fa-gear ml-1.5"></i>تنظیمات</div>
                         </div>
-                        
-                   
-                        
+
+                        <div class="max-h-[46vh] overflow-y-auto -mx-1 px-1">
+
+                        <!-- Dashboard Tab -->
+                        <div id="profile-tab-dashboard" class="profile-tab-content pt-5 pb-2">
+                            <div class="text-sm font-bold text-slate-700 mb-2">نشان‌های شما</div>
+                            <div class="grid grid-cols-2 gap-2 mb-5">
+                                ${achievementsHTML}
+                            </div>
+                            <div class="text-sm font-bold text-slate-700 mb-2">آخرین دانلودها</div>
+                            <div class="space-y-2">
+                                ${history.slice(0, 2).length ? history.slice(0, 2).map(h => `
+                                    <div class="flex items-center gap-x-3 p-2.5 bg-slate-50 rounded-2xl">
+                                        <div class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 text-xs">
+                                            <i class="fas ${categoryIcon(h.category)}"></i>
+                                        </div>
+                                        <div class="text-xs font-bold truncate">${h.title}</div>
+                                    </div>
+                                `).join('') : `<div class="text-xs text-slate-400 text-center py-4">هنوز فعالیتی ثبت نشده است.</div>`}
+                            </div>
+                        </div>
+
+                        <!-- Downloads Tab -->
+                        <div id="profile-tab-downloads" class="profile-tab-content pt-5 pb-2 hidden space-y-2">
+                            ${downloadsListHTML}
+                        </div>
+
+                        <!-- Wishlist Tab -->
+                        <div id="profile-tab-wishlist" class="profile-tab-content pt-5 pb-2 hidden space-y-2">
+                            ${wishlistListHTML}
+                        </div>
+
                         <!-- Club Tab -->
-                        <div id="profile-tab-club" class="profile-tab-content pt-5 hidden">
+                        <div id="profile-tab-club" class="profile-tab-content pt-5 pb-2 hidden">
+                            <div class="flex items-center gap-x-1 mb-5">
+                                ${tierLadderHTML}
+                            </div>
+
                             <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-5 text-sm">
                                 <div class="font-bold text-emerald-700 mb-2 flex items-center gap-x-2">
-                                    <i class="fas fa-trophy"></i> 
+                                    <i class="fas fa-trophy"></i>
                                     <span>باشگاه مشتریان بلوک بازار</span>
                                 </div>
-                                <p class="text-emerald-600">سطح فعلی شما: <strong>${user.level}</strong></p>
+                                <p class="text-emerald-600">سطح فعلی شما: <strong>${tier.current.name}</strong></p>
                                 <div class="mt-3 text-xs">با هر دانلود و معرفی دوست امتیاز بگیرید و به سطح بالاتر برسید. پاداش‌های ویژه در انتظار شماست!</div>
                             </div>
-                            
-                            <div class="mt-5 text-xs text-slate-500">امتیازهای قابل استفاده: <span class="font-bold text-emerald-600">${user.points} امتیاز</span></div>
+
+                            <div class="mt-4 p-4 border border-slate-200 rounded-2xl flex items-center justify-between gap-x-3">
+                                <div class="min-w-0">
+                                    <div class="text-xs font-bold text-slate-600">کد معرفی شما</div>
+                                    <div class="text-xs text-slate-400 mt-0.5">به دوستان بدهید و امتیاز جایزه بگیرید</div>
+                                </div>
+                                <button onclick="copyReferralCode('${user.email}')" class="text-xs font-bold bg-slate-900 text-white px-4 py-2.5 rounded-2xl hover:bg-slate-800 flex-shrink-0">
+                                    <i class="fas fa-copy ml-1"></i>کپی کد
+                                </button>
+                            </div>
                         </div>
-                        
+
                         <!-- Settings Tab -->
-                        <div id="profile-tab-settings" class="profile-tab-content pt-5 hidden">
+                        <div id="profile-tab-settings" class="profile-tab-content pt-5 pb-2 hidden">
                             <div class="space-y-4 text-sm">
                                 <div class="flex justify-between items-center">
                                     <div>اعلان‌های جدید محصولات</div>
@@ -1584,33 +1824,45 @@
                                     <div>خبرنامه هفتگی</div>
                                     <div class="w-11 h-6 bg-emerald-500 rounded-full relative cursor-pointer"><div class="absolute right-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow"></div></div>
                                 </div>
+                                <div class="flex justify-between items-center">
+                                    <div>پیشنهادهای ویژه و تخفیف‌ها</div>
+                                    <div class="w-11 h-6 bg-slate-200 rounded-full relative cursor-pointer"><div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow"></div></div>
+                                </div>
                                 <div class="pt-3 border-t text-xs text-slate-400">عضو از ${user.joinDate}</div>
+
+                                <div class="pt-3 border-t">
+                                    <button onclick="resetAccountData()" class="w-full text-xs font-bold text-rose-600 border border-rose-100 hover:bg-rose-50 py-3 rounded-2xl">
+                                        <i class="fas fa-rotate-left ml-1.5"></i>بازنشانی داده‌های دانلود و علاقه‌مندی‌ها
+                                    </button>
+                                </div>
                             </div>
                         </div>
+
+                        </div>
                     </div>
-                    
+
                     <div class="p-6 pt-4">
                         <button onclick="hideProfileModal()" class="w-full py-3 text-sm font-bold border border-slate-200 hover:bg-slate-50 rounded-2xl">بستن پروفایل</button>
                     </div>
                 </div>
             `
-            
+
             modal.classList.remove('hidden')
             modal.classList.add('flex')
         }
-        
+
         function switchProfileTab(element, tab) {
             document.querySelectorAll('.profile-tab').forEach(el => el.classList.remove('active', 'border-emerald-600', 'text-emerald-600'))
             document.querySelectorAll('.profile-tab').forEach(el => el.classList.add('text-slate-500'))
-            
+
             element.classList.add('active', 'border-emerald-600', 'text-emerald-600')
             element.classList.remove('text-slate-500')
-            
+
             document.querySelectorAll('.profile-tab-content').forEach(el => el.classList.add('hidden'))
             document.getElementById('profile-tab-' + tab).classList.remove('hidden')
         }
         
-        function logoutUser() {
+function logoutUser() {
             localStorage.removeItem('blockmarket_user')
             document.getElementById('profile-modal').classList.add('hidden')
             document.getElementById('profile-modal').classList.remove('flex')
