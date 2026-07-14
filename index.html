@@ -42,9 +42,9 @@
         "url": "https://shetwarp.github.io/bazarblock/",
         "description": "Free Minecraft plugin, mod and data pack download site.",
         "sameAs": [
-            "https://t.me/bluesunplant",
+            "https://telegram.me/blockbazar1",
             "https://www.instagram.com/the_bluesun1",
-            "https://discord.gg/gnDQjgVpF"
+            "https://discord.gg/9zGjCcgXP"
         ]
     }
     </script>
@@ -91,6 +91,9 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+
+
 
         /* ===== Minecraft-style aesthetic ===== */
         .mc-font {
@@ -274,8 +277,29 @@
         .cart-item {
             transition: all 0.2s ease;
         }
+
+
+/* Simple Loading */
+#loading-screen {
+    background-image: url("1 (104).png") !important;
+    background-size: cover;
+    background-position: center;
+}
+
+
     </style>
 </head>
+
+    <!-- Simple Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-cover bg-center z-[9999] flex items-center justify-center transition-opacity duration-700">
+        <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-6 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+            <div class="text-white text-xl font-bold mc-font tracking-widest">در حال بارگذاری...</div>
+            <div class="text-emerald-400 text-sm mt-2">بلوک بازار • Minecraft 1.21</div>
+        </div>
+    </div>
+
+
 <body class="bg-slate-50 text-slate-800">
     <!-- Top Bar -->
     <div class="bg-slate-900 text-white py-2 text-sm">
@@ -505,9 +529,9 @@
                         <span>آیا دانلود همه محصولات واقعاً رایگان است؟</span>
                         <span class="mc-faq-icon text-2xl leading-none">+</span>
                     </summary>
-                    <div class="px-6 pb-6 text-slate-600 leading-relaxed">
-                        بله، تمام مودها، پلاگین‌ها و دیتا پک‌های موجود در بلوک بازار کاملاً رایگان هستند و هیچ هزینه پنهانی برای دانلود وجود ندارد.
-                    </div>
+                   <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                          بله، تمام مودها، پلاگین‌ها و دیتا پک‌های موجود در بلوک بازار کاملاً رایگان هستند و هیچ هزینه پنهانی برای دانلود وجود ندارد.اما محصولاتی که خودمون تولید شون میکنید هزینه ای کم چیز دارند یا پلاگین رو از سایت های تولید کننده دانلود میکنیم و با داشتن حق نشر ان محصول ان را به فروش میرسانیم
+                   </div>
                 </details>
 
                 <details class="mc-faq mc-card p-0 overflow-hidden">
@@ -639,9 +663,9 @@
                     <p class="text-sm leading-relaxed max-w-xs">بازار تخصصی دانلود رایگان مودها، پلاگین‌ها و دیتا پک‌های بازی. ساخته شده برای جامعه گیمرهای ایرانی.</p>
                     
                     <div class="mt-6 flex gap-x-4">
-                        <a href="https://t.me/bluesunplant" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-2xl flex items-center justify-center transition-colors"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://telegram.me/blockbazar1" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-2xl flex items-center justify-center transition-colors"><i class="fab fa-telegram-plane"></i></a>
                         <a href="https://www.instagram.com/the_bluesun1?igsh=MWg0cWEycDFmZDdkZA==" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-2xl flex items-center justify-center transition-colors"><i class="fab fa-instagram"></i></a>
-                        <a href="https://discord.gg/gnDQjgVpF" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-2xl flex items-center justify-center transition-colors"><i class="fab fa-discord"></i></a>
+                        <a href="https://discord.gg/9zGjCcgXP" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-2xl flex items-center justify-center transition-colors"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
                 
@@ -703,13 +727,13 @@
             <div class="border-t p-6 bg-slate-50 rounded-b-3xl md:rounded-b-3xl">
                 <div class="flex justify-between items-center mb-4 px-1">
                     <div class="text-slate-600">مجموع</div>
-                    <div class="text-2xl font-extrabold text-emerald-600">رایگان</div>
+                    <div id="cart-total" class="text-2xl font-extrabold text-emerald-600">رایگان</div>
                 </div>
                 
-                <button onclick="checkoutCart()" 
+                <button id="cart-checkout-btn" onclick="checkoutCart()" 
                         class="mc-btn mc-btn-green w-full py-4 flex items-center justify-center gap-x-3 text-lg">
-                    <i class="fas fa-download"></i>
-                    <span>دانلود</span>
+                    <i id="cart-checkout-icon" class="fas fa-download"></i>
+                    <span id="cart-checkout-text">دانلود</span>
                 </button>
                 
                 <p class="text-center text-[10px] text-slate-400 mt-3">سبد خرید</p>
@@ -983,6 +1007,33 @@ let products = [
         version: "1.21+",
         size: "0.4MB",
         modrinthUrl: "https://cdn.modrinth.com/data/RRxvWKNC/versions/yQdcUfnr/LowOnFire%20v26.2%C2%A78.zip?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=minecraft"
+    },
+        {
+        id: 19,
+        title: "PlayerKill Money",
+        category: "پلاگین‌ها",
+        desc: "هر بار که بازیکنی را بکشید، پول دریافت کنید",
+        longDesc: "با این پلاگین هر وقتی که بازیکنی را در سرور بکشید، مبلغی به عنوان جایزه به حساب شما واریز می‌شود. قابل تنظیم بودن مقدار جایزه، پیام‌ها، و جلوگیری از فارم. مناسب برای سرورهای Survival و Prison.",
+        image: "636261536687314965.png",   
+        downloads: 2,
+        version: "Paper/Spigot 1.21+",
+        size: "1.4MB",
+        price: 12000,
+        isPaid: true
+    },
+
+    {
+        id: 20,
+        title: "AutoMessage",
+        category: "پلاگین‌ها",
+        desc: "ارسال پیام‌های خودکار در چت سرور",
+        longDesc: "پلاگین قدرتمند ارسال پیام‌های خودکار در فاصله‌های زمانی دلخواه. پشتیبانی از رنگ، placeholder، چند خطی، و گروه‌بندی پیام‌ها. بهترین ابزار برای اطلاع‌رسانی قوانین، تخفیف‌ها، اخبار و ... در سرور.",
+        image: "112363.jpg",   
+        downloads: 6,
+        version: "Paper/Spigot 1.21+",
+        size: "1.1MB",
+        price: 14000,
+        isPaid: true
     }
 ]
         
@@ -1032,17 +1083,25 @@ let products = [
             filteredProducts.forEach(product => {
                 const isInCart = cart.some(item => item.id === product.id)
                 
-                const cardHTML = `
+                              const cardHTML = `
                     <div onclick="showProductModal(${product.id})" class="product-card mc-card overflow-hidden cursor-pointer group">
                         <div class="relative h-48 overflow-hidden bg-slate-100 border-b-4 border-black">
-                            <img src="${product.image}" alt="دانلود ${product.title} - Minecraft ${product.category === 'پلاگین‌ها' ? 'plugin' : product.category === 'دیتا پک‌ها' ? 'data pack' : product.category === 'ریسورس پک‌ها' ? 'resource pack' : 'mod'} download" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             
-                            <div class="absolute top-4 right-4">
-                                <div class="mc-badge product-badge flex items-center gap-x-1.5 px-3.5 py-1 shadow">
-                                    <i class="fas fa-gift"></i>
-                                    <span></span>
-                                </div>
-                            </div>
+                            ${product.isPaid ? 
+                                `<div class="absolute top-4 right-4">
+                                    <div class="mc-badge bg-red-500 text-white flex items-center gap-x-1.5 px-3.5 py-1 shadow">
+                                        <i class="fas fa-lock"></i>
+                                        
+                                    </div>
+                                </div>` : 
+                                `<div class="absolute top-4 right-4">
+                                    <div class="mc-badge product-badge flex items-center gap-x-1.5 px-3.5 py-1 shadow">
+                                        <i class="fas fa-gift"></i>
+                                        
+                                    </div>
+                                </div>`
+                            }
                             
                             <div class="absolute top-4 left-4">
                                 <span class="bg-white/90 text-slate-700 text-[10px] font-bold px-3 py-0.5 rounded-2xl shadow-sm">${product.category}</span>
@@ -1063,16 +1122,31 @@ let products = [
                             </div>
                             
                             <div class="flex gap-2">
-                                <button onclick="event.stopImmediatePropagation(); addToCart(${product.id})" 
-                                        class="mc-btn ${isInCart ? 'mc-btn-emerald' : 'mc-btn-green'} flex-1 px-4 py-2.5 text-sm flex items-center justify-center gap-x-2">
-                                    <i class="fas ${isInCart ? 'fa-check' : 'fa-cart-plus'}"></i>
-                                    <span>${isInCart ? 'در سبد' : 'افزودن به سبد'}</span>
-                                </button>
-                                
-                                <button onclick="event.stopImmediatePropagation(); quickDownload(${product.id})" 
-                                        class="mc-btn mc-btn-brown px-4 py-2.5 text-sm flex items-center justify-center">
-                                    <i class="fas fa-download"></i>
-                                </button>
+                                ${product.isPaid ? 
+                                    (isInCart ?
+                                        `<button onclick="event.stopImmediatePropagation(); quickDownload(${product.id})" 
+                                                class="mc-btn mc-btn-emerald flex-1 py-2.5 text-sm font-bold flex items-center justify-center gap-x-2">
+                                            <i class="fas fa-download"></i>
+                                            <span>دانلود</span>
+                                        </button>` :
+                                        `<button onclick="event.stopImmediatePropagation(); buyPaidProduct(${product.id})" 
+                                                class="mc-btn mc-btn-brown flex-1 py-2.5 text-sm font-bold flex items-center justify-center gap-x-2">
+                                            <i class="fas fa-shopping-bag"></i>
+                                            <span>${product.price.toLocaleString('fa-IR')} تومان</span>
+                                        </button>`
+                                    ) 
+                                    :
+                                    `<button onclick="event.stopImmediatePropagation(); addToCart(${product.id})" 
+                                            class="mc-btn ${isInCart ? 'mc-btn-emerald' : 'mc-btn-green'} flex-1 px-4 py-2.5 text-sm flex items-center justify-center gap-x-2">
+                                        <i class="fas ${isInCart ? 'fa-check' : 'fa-cart-plus'}"></i>
+                                        <span>${isInCart ? 'در سبد' : 'افزودن به سبد'}</span>
+                                    </button>
+                                    
+                                    <button onclick="event.stopImmediatePropagation(); quickDownload(${product.id})" 
+                                            class="mc-btn mc-btn-brown px-4 py-2.5 text-sm flex items-center justify-center">
+                                        <i class="fas fa-download"></i>
+                                    </button>`
+                                }
                             </div>
                         </div>
                     </div>
@@ -1233,14 +1307,20 @@ let products = [
                             <img src="${item.image}" class="w-16 h-16 object-cover rounded-xl flex-shrink-0" alt="">
                             <div class="flex-1 min-w-0">
                                 <div class="font-bold text-base line-clamp-1">${item.title}</div>
-                                <div class="text-xs text-emerald-600 mt-0.5">${item.category} • رایگان</div>
+                                <div class="text-xs ${item.isPaid ? 'text-amber-600' : 'text-emerald-600'} mt-0.5">${item.category} • ${item.isPaid ? (item.price.toLocaleString('fa-IR') + ' تومان') : 'رایگان'}</div>
                                 
                                 <div class="flex items-center justify-between mt-3">
                                     <div class="text-xs text-slate-500">${item.size}</div>
-                                    <button onclick="removeFromCart(${index}); event.stopImmediatePropagation()" 
-                                            class="text-red-500 hover:text-red-600 text-xs flex items-center gap-x-1">
-                                        <i class="fas fa-trash"></i> <span>حذف</span>
-                                    </button>
+                                    <div class="flex items-center gap-x-3">
+                                        ${item.isPaid ? `<button onclick="quickDownload(${item.id}); event.stopImmediatePropagation()" 
+                                                class="text-emerald-600 hover:text-emerald-700 text-xs flex items-center gap-x-1">
+                                            <i class="fas fa-download"></i> <span>دانلود</span>
+                                        </button>` : ''}
+                                        <button onclick="removeFromCart(${index}); event.stopImmediatePropagation()" 
+                                                class="text-red-500 hover:text-red-600 text-xs flex items-center gap-x-1">
+                                            <i class="fas fa-trash"></i> <span>حذف</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1249,8 +1329,32 @@ let products = [
                 itemsContainer.innerHTML = html
             }
             
+            updateCartFooter()
+            
             modal.classList.remove('hidden')
             modal.classList.add('flex')
+        }
+        
+        // Update cart footer total & button label based on whether cart has paid items
+        function updateCartFooter() {
+            const totalEl = document.getElementById('cart-total')
+            const btnEl = document.getElementById('cart-checkout-btn')
+            const btnIcon = document.getElementById('cart-checkout-icon')
+            const btnText = document.getElementById('cart-checkout-text')
+            if (!totalEl || !btnEl) return
+            
+            const hasPaid = cart.some(item => item.isPaid)
+            
+            if (hasPaid) {
+                const totalPrice = cart.filter(i => i.isPaid).reduce((sum, i) => sum + i.price, 0)
+                totalEl.textContent = `${totalPrice.toLocaleString('fa-IR')} تومان`
+                btnIcon.className = 'fas fa-shopping-bag'
+                btnText.textContent = 'خرید محصولات'
+            } else {
+                totalEl.textContent = 'رایگان'
+                btnIcon.className = 'fas fa-download'
+                btnText.textContent = 'دانلود'
+            }
         }
         
         function removeFromCart(index) {
@@ -1269,15 +1373,26 @@ let products = [
         function checkoutCart() {
             if (cart.length === 0) return
             
+            const paidItems = cart.filter(item => item.isPaid)
+            const freeItems = cart.filter(item => !item.isPaid)
+            
+            // اگر محصول پولی خریداری‌نشده در سبد باشد، کاربر را به مسیر خرید هدایت کن
+            if (paidItems.length > 0) {
+                hideCartModal()
+                paidItems.forEach(item => buyPaidProduct(item.id))
+            }
+            
+            if (freeItems.length === 0) return
+            
             const toast = document.getElementById('toast')
             const toastText = document.getElementById('toast-text')
             
-            toastText.innerHTML = `باز کردن ${cart.length} صفحه دانلود در Modrinth...`
+            toastText.innerHTML = `باز کردن ${freeItems.length} صفحه دانلود در Modrinth...`
             toast.classList.remove('hidden')
             toast.classList.add('flex')
             
             // Download real files where possible
-            cart.forEach((product, index) => {
+            freeItems.forEach((product, index) => {
                 setTimeout(() => {
                     if (product.directDownloadUrl) {
                         const a = document.createElement('a')
@@ -1297,10 +1412,11 @@ let products = [
                 toast.classList.add('hidden')
                 hideCartModal()
                 
-                cart = []
+                // فقط محصولات رایگان از سبد حذف می‌شوند، محصولات پولی برای دانلود مجدد باقی می‌مانند
+                cart = cart.filter(item => item.isPaid)
                 saveCart()
                 filterProducts()
-            }, cart.length * 450 + 800)
+            }, freeItems.length * 450 + 800)
         }
         
         // Product Modal
@@ -1324,10 +1440,16 @@ let products = [
                         <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-transparent"></div>
                         
                         <div class="absolute top-6 right-6">
-                            <div class="product-badge flex items-center gap-x-2 px-5 py-1.5 text-sm shadow-lg">
-                                <i class="fas fa-gift"></i>
-                                <span class="font-extrabold">کاملاً رایگان</span>
-                            </div>
+                            ${product.isPaid ?
+                                `<div class="mc-badge bg-red-500 text-white flex items-center gap-x-2 px-5 py-1.5 text-sm shadow-lg">
+                                    <i class="fas fa-lock"></i>
+                                    <span class="font-extrabold">پولی</span>
+                                </div>` :
+                                `<div class="product-badge flex items-center gap-x-2 px-5 py-1.5 text-sm shadow-lg">
+                                    <i class="fas fa-gift"></i>
+                                    <span class="font-extrabold">کاملاً رایگان</span>
+                                </div>`
+                            }
                         </div>
                         
                         <div class="absolute bottom-6 right-6 bg-white/95 px-4 py-1 rounded-2xl text-xs font-bold text-slate-700 flex items-center gap-x-2 shadow">
@@ -1364,17 +1486,31 @@ let products = [
                         </div>
                         
                         <div class="mt-8 flex flex-col sm:flex-row gap-3">
-                            <button onclick="addToCartFromModal(${product.id}); hideModal()" 
-                                    class="mc-btn ${isInCart ? 'mc-btn-emerald' : 'mc-btn-green'} flex-1 py-4 flex items-center justify-center gap-x-3 text-lg">
-                                <i class="fas ${isInCart ? 'fa-check' : 'fa-cart-plus'}"></i>
-                                <span>${isInCart ? 'قبلاً به سبد اضافه شد' : 'افزودن به سبد خرید'}</span>
-                            </button>
-                            
-                            <button onclick="quickDownload(${product.id}); hideModal()" 
-                                    class="mc-btn mc-btn-brown flex-1 py-4 text-lg flex items-center justify-center gap-x-2">
-                                <i class="fas fa-download"></i>
-                                <span>دانلود سریع</span>
-                            </button>
+                            ${product.isPaid ?
+                                (isInCart ?
+                                    `<button onclick="quickDownload(${product.id})" 
+                                            class="mc-btn mc-btn-emerald flex-1 py-4 flex items-center justify-center gap-x-3 text-lg">
+                                        <i class="fas fa-download"></i>
+                                        <span>دانلود (قبلاً خریداری شده)</span>
+                                    </button>` :
+                                    `<button onclick="buyPaidProduct(${product.id}); hideModal()" 
+                                            class="mc-btn mc-btn-brown flex-1 py-4 flex items-center justify-center gap-x-3 text-lg">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>خرید محصول • ${product.price.toLocaleString('fa-IR')} تومان</span>
+                                    </button>`
+                                ) :
+                                `<button onclick="addToCartFromModal(${product.id}); hideModal()" 
+                                        class="mc-btn ${isInCart ? 'mc-btn-emerald' : 'mc-btn-green'} flex-1 py-4 flex items-center justify-center gap-x-3 text-lg">
+                                    <i class="fas ${isInCart ? 'fa-check' : 'fa-cart-plus'}"></i>
+                                    <span>${isInCart ? 'قبلاً به سبد اضافه شد' : 'افزودن به سبد خرید'}</span>
+                                </button>
+                                
+                                <button onclick="quickDownload(${product.id}); hideModal()" 
+                                        class="mc-btn mc-btn-brown flex-1 py-4 text-lg flex items-center justify-center gap-x-2">
+                                    <i class="fas fa-download"></i>
+                                    <span>دانلود سریع</span>
+                                </button>`
+                            }
                         </div>
                         
                         <p class="text-center text-xs text-slate-400 mt-5">فایل‌ها توسط تیم بلوک بازار تست و اسکن شده‌اند • بدون ویروس</p>
@@ -2037,29 +2173,100 @@ function logoutUser() {
             if (saved) applyBackground(saved)
         }
 
-        function initializeSite() {
-            loadFromStorage()
-            loadCustomBackground()
-            
-            renderProducts(products)
-            
-            setupSearch()
-            
-            const firstTab = document.querySelector('#category-tabs button')
-            if (firstTab) firstTab.classList.add('active')
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === '/' && document.activeElement.tagName === 'BODY') {
-                    e.preventDefault()
-                    const search = document.getElementById('search-input')
-                    if (search) search.focus()
-                }
-            })
-            
-            animateStats()
-            
-            console.log('%c[بلوک بازار] سایت با موفقیت بارگذاری شد ✅ تمام تغییرات اعمال شد', 'color:#64748b')
+       function initializeSite() {
+    const loadingScreen = document.getElementById('loading-screen');
+    
+    loadFromStorage();
+    loadCustomBackground();
+    
+    renderProducts(products);
+    setupSearch();
+    
+    const firstTab = document.querySelector('#category-tabs button');
+    if (firstTab) firstTab.classList.add('active');
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+            e.preventDefault();
+            const search = document.getElementById('search-input');
+            if (search) search.focus();
         }
+    });
+    
+    animateStats();
+    
+    // مخفی کردن لودینگ بعد از بارگذاری کامل
+    setTimeout(() => {
+        if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.remove(); // کامل حذف می‌شود
+            }, 700);
+        }
+    }, 650);
+    
+    console.log('%c[بلوک بازار] سایت با موفقیت بارگذاری شد ✅', 'color:#4ade80');
+}
+
+
+
+// خرید محصولات پولی
+function buyPaidProduct(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const modalHTML = `
+        <div id="payment-modal" onclick="this.remove()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[200] flex items-center justify-center p-4">
+            <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl w-full max-w-md p-8">
+                <div class="text-center mb-6">
+                    <h3 class="font-extrabold text-2xl">${product.title}</h3>
+                    <p class="text-3xl font-bold text-emerald-600 mt-3">${product.price.toLocaleString('fa-IR')} تومان</p>
+                </div>
+                
+                <p class="text-center text-slate-600 mb-6">برای خرید این پلاگین از کدام روش استفاده می‌کنید؟</p>
+                
+                <div class="space-y-3">
+                    <button onclick="window.open('https://telegram.me/blockbazar1', '_blank'); confirmPaidPurchase(${product.id}); this.closest('#payment-modal').remove()" 
+                            class="w-full bg-[#229ED9] hover:bg-[#1a8ac4] text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-3">
+                        <i class="fab fa-telegram-plane text-2xl"></i>
+                        خرید از طریق تلگرام
+                    </button>
+                    
+                    <button onclick="window.open('https://discord.gg/9zGjCcgXP', '_blank'); confirmPaidPurchase(${product.id}); this.closest('#payment-modal').remove()" 
+                            class="w-full bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-3">
+                        <i class="fab fa-discord text-2xl"></i>
+                        خرید از طریق دیسکورد
+                    </button>
+                </div>
+                
+                <button onclick="this.closest('#payment-modal').remove()" 
+                        class="w-full mt-4 text-slate-500 py-3">انصراف</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+}
+
+// بعد از شروع فرآیند خرید — فقط پیام نمایش داده می‌شود (بدون اضافه کردن به سبد)
+function confirmPaidPurchase(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toast-text');
+    
+    if (toast && toastText) {
+        toastText.innerHTML = `درخواست خرید <strong>${product.title}</strong> ثبت شد.<br>پس از تأیید پرداخت توسط ادمین، فایل برای شما ارسال/فعال خواهد شد.`;
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        
+        setTimeout(() => {
+            toast.classList.remove('flex');
+            toast.classList.add('hidden');
+        }, 3200);
+    }
+}
         
         window.onload = initializeSite
         window.BlockMarket = { filterByCategory, showProductModal, addToCart }
