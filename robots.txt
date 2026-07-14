@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shetwarp.github.io/bazarblock/sitemap.xml
