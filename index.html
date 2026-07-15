@@ -307,7 +307,7 @@
             <div class="flex items-center gap-x-4">
                 <div class="flex items-center gap-x-2">
                     <i class="fas fa-headset text-emerald-400"></i>
-                    <span class="font-medium">100% تخفیف برای تمام محصولات</span>
+                    <span class="font-medium">بخش مپ ها به سایت اضافه شد</span>
                 </div>
               
             <div class="text-emerald-400 text-xs md:text-sm font-medium flex items-center gap-x-1">
@@ -348,6 +348,8 @@
                                class="w-full bg-slate-100 border border-slate-200 focus:border-indigo-400 transition-colors rounded-3xl py-2.5 pr-11 pl-5 text-sm outline-none">
                         <i class="fas fa-search absolute right-4 top-3.5 text-slate-400"></i>
                     </div>
+
+                    
 
                     <!-- Cart -->
                     <button onclick="showCartModal()" 
@@ -470,6 +472,7 @@
             </div>
         </div>
     </section>
+    
 
     <!-- Shop / Latest Products -->
     <section id="shop" class="max-w-screen-xl mx-auto px-6 py-16">
@@ -487,6 +490,7 @@
                 <button onclick="filterByCategory('پلاگین‌ها')" class="category-tab mc-btn px-5 py-2 text-sm" data-category="پلاگین‌ها">پلاگین‌ها</button>
                 <button onclick="filterByCategory('دیتا پک‌ها')" class="category-tab mc-btn px-5 py-2 text-sm" data-category="دیتا پک‌ها">دیتا پک‌ها</button>
                 <button onclick="filterByCategory('ریسورس پک‌ها')" class="category-tab mc-btn px-5 py-2 text-sm" data-category="ریسورس پک‌ها">ریسورس پک‌ها</button>
+                <button onclick="filterByCategory('مپ‌ها')" class="category-tab mc-btn px-5 py-2 text-sm" data-category="مپ‌ها">مپ‌ها</button>
             </div>
         </div>
         
@@ -787,16 +791,25 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+    
+
     <script>
         // Tailwind + Data
         // Tailwind + Data
 let products = [
     {
         id: 1,
-        title: "مود Sodium (بهینه‌سازی)",
+        title: "Sodium",
         category: "مودها",
         desc: "بهترین مود بهینه‌سازی برای افزایش فریم‌ریت و عملکرد بازی.",
-        longDesc: "Sodium یکی از محبوب‌ترین مودهای بهینه‌سازی ماینکرافت است که فریم‌ریت را به شدت افزایش می‌دهد. مناسب برای همه پلیرها.",
+        longDesc: "Sodium  فریم‌ریت را به شدت افزایش می‌دهد. مناسب برای همه پلیرها.",
         image: "295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
         downloads: 71,
         version: "1.21+",
@@ -805,10 +818,10 @@ let products = [
     },
     {
         id: 2,
-        title: "دیتا پک Terralith",
+        title: "Terralith",
         category: "دیتا پک‌ها",
         desc: "جهان‌ساز فوق‌العاده واقع‌گرایانه با بیوم‌های جدید و ساختارهای زیبا.",
-        longDesc: "Terralith یکی از بهترین دیتا پک‌های جهان‌سازی است که بیوم‌ها، کوه‌ها و ساختارها را کاملاً تغییر می‌دهد.",
+        longDesc: "Terralith  بیوم‌ها، کوه‌ها و ساختارها را کاملاً تغییر می‌دهد.",
         image: "1959d924a1088944bbf07a06ba523726112d7e7a_96.webp",
         downloads: 13,
         version: "1.21+",
@@ -817,7 +830,7 @@ let products = [
     },
     {
         id: 3,
-        title: "مود Iris Shaders",
+        title: "Iris Shaders",
         category: "مودها",
         desc: "پشتیبانی از شیدرهای زیبا و پیشرفته برای گرافیک بهتر.",
         longDesc: "Iris بهترین مود شیدر برای ماینکرافت است که با Sodium سازگار است و گرافیک بازی را به سطح جدیدی می‌برد.",
@@ -829,10 +842,10 @@ let products = [
     },
     {
         id: 4,
-        title: "دیتا پک Vanilla Refresh",
+        title: "Vanilla Refresh",
         category: "دیتا پک‌ها",
         desc: "بهبودهای کوچک اما کاربردی برای تجربه بهتر بازی ونilla.",
-        longDesc: "Vanilla Refresh کیفیت زندگی را با ویژگی‌های کوچک مثل نشستن بازیکن، شمارنده روز و ... بهبود می‌بخشد.",
+        longDesc: "  کیفیت زندگی را با ویژگی‌های کوچک مثل نشستن بازیکن، شمارنده روز و ...  .",
         image: "4d6ac282afe713a4413cc8f230942c61a1b3c6e0_96.webp",
         downloads: 3,
         version: "1.21+",
@@ -841,7 +854,7 @@ let products = [
     },
     {
         id: 5,
-        title: "مود Fabric API",
+        title: "Fabric API",
         category: "مودها",
         desc: "کتابخانه اصلی برای اکثر مودهای Fabric — ضروری برای نصب مودها.",
         longDesc: "Fabric API کتابخانه پایه برای اکثر مودهای Fabric است. بدون آن بسیاری از مودها کار نمی‌کنند.",
@@ -853,7 +866,7 @@ let products = [
     },
     {
         id: 6,
-        title: "دیتا پک Dungeons and Taverns",
+        title: "Dungeons and Taverns",
         category: "دیتا پک‌ها",
         desc: "افزودن سیاه‌چال‌ها، میخانه‌ها و ساختارهای جدید به جهان.",
         longDesc: "دیتا پک عالی برای اضافه کردن ساختارهای ماجراجویی و سیاه‌چال‌های جدید به بازی.",
@@ -865,7 +878,7 @@ let products = [
     },
     {
         id: 7,
-        title: "مود Cloth Config API",
+        title: "Cloth Config API",
         category: "مودها",
         desc: "کتابخانه تنظیمات برای مودها — مورد نیاز بسیاری از مودهای مدرن.",
         longDesc: "Cloth Config API کتابخانه‌ای برای ایجاد منوهای تنظیمات زیبا در مودها است.",
@@ -877,7 +890,7 @@ let products = [
     },
     {
         id: 8,
-        title: "دیتا پک Nice Mobs Remastered",
+        title: "NiceMobsRemastered",
         category: "دیتا پک‌ها",
         desc: "بهبود ظاهر و رفتار موجودات بازی با مدل‌ها و انیمیشن‌های جدید.",
         longDesc: "این دیتا پک موجودات بازی را زیباتر و واقعی‌تر می‌کند.",
@@ -889,20 +902,20 @@ let products = [
     },
     {
         id: 9,
-        title: "پلاگین LuckPerms (مدیریت مجوزها)",
+        title: "LuckPerms",
         category: "پلاگین‌ها",
         desc: "سیستم مدیریت مجوزها و رتبه‌های حرفه‌ای برای سرورها.",
         longDesc: "LuckPerms بهترین سیستم مدیریت مجوزها برای سرورهای ماینکرافت است.",
         image: "90943902cc650e95b167265b8f2d7c893f82c8f4_96.webp",
         downloads: 145,
-        version: "Paper/Spigot",
+        version: "1.21+",
         size: "2.2MB",
         modrinthUrl: "https://modrinth.com/plugin/luckperms",
         directDownloadUrl: "https://cdn.modrinth.com/data/Vebnzrzj/versions/MBSY8toc/LuckPerms-Bukkit-5.5.53.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=paper"
     },
     {
         id: 10,
-        title: "مود Lithium (بهینه‌سازی)",
+        title: "Lithium",
         category: "مودها",
         desc: "بهینه‌سازی عمیق منطق بازی برای کاهش لگ و افزایش عملکرد.",
         longDesc: "Lithium مود بهینه‌سازی قدرتمند است که تغییرات عمیقی در منطق بازی ایجاد می‌کند تا فریم‌ریت و عملکرد را افزایش دهد. سازگار با Sodium.",
@@ -914,7 +927,7 @@ let products = [
     },
     {
         id: 11,
-        title: "مود Mod Menu",
+        title: "Mod Menu",
         category: "مودها",
         desc: "منوی مدیریت مودها برای مشاهده لیست و تنظیمات آسان.",
         longDesc: "Mod Menu مود ضروری Fabric است که لیست تمام مودها را در منوی بازی نشان می‌دهد و امکان پیکربندی سریع را فراهم می‌کند.",
@@ -926,7 +939,7 @@ let products = [
     },
     {
         id: 12,
-        title: "مود Waystones",
+        title: "Waystones",
         category: "مودها",
         desc: "سنگ‌های راهنما برای تلپورت سریع بین مکان‌های دلخواه.",
         longDesc: "با Waystones می‌توانید سنگ‌های راهنما بسازید و بین آن‌ها تلپورت کنید. عالی برای سرورهای بقا و جهان‌های بزرگ.",
@@ -938,7 +951,7 @@ let products = [
     },
     {
         id: 13,
-        title: "دیتا پک Towns and Towers",
+        title: "Towns.and.Towers",
         category: "دیتا پک‌ها",
         desc: "شهرها، روستاها و برج‌های جدید و زیبا به جهان اضافه می‌کند.",
         longDesc: "این دیتا پک ساختارهای جذابی مثل towns و towers را به بازی اضافه می‌کند و اکتشاف را هیجان‌انگیزتر می‌کند.",
@@ -950,34 +963,34 @@ let products = [
     },
     {
         id: 14,
-        title: "پلاگین EssentialsX",
+        title: "EssentialsX",
         category: "پلاگین‌ها",
         desc: "پلاگین جامع سرور با دستورات پایه، اقتصاد و مدیریت بازیکنان.",
-        longDesc: "EssentialsX محبوب‌ترین پلاگین برای سرورهای Paper/Spigot است که teleport، economy، kits و صدها دستور مفید اضافه می‌کند.",
+        longDesc: "   teleport، economy، kits صدها دستور مفید اضافه می‌کند.",
         image: "e621675be1d0421b43b65ab8082507532d937009_96.webp",
         downloads: 98,
-        version: "Paper/Spigot",
+        version: "1.21+",
         size: "4.8MB",
         modrinthUrl: "https://cdn.modrinth.com/data/hXiIvTyT/versions/nY6VN1XH/EssentialsX-2.22.0.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=paper"
     },
     {
         id: 15,
-        title: "پلاگین WorldEdit",
+        title: "WorldEdit",
         category: "پلاگین‌ها",
         desc: "ابزار حرفه‌ای ویرایش جهان برای ساخت و ساز سریع.",
         longDesc: "WorldEdit به شما اجازه می‌دهد با دستورات سریع بلاک‌ها را ویرایش، کپی و ساختارهای عظیم بسازید. ضروری برای ادمین‌های سرور.",
         image: "30698991048ced77e60c4e8284007d3782f2e6a3_96.webp",
         downloads: 76,
-        version: "Paper/Spigot",
+        version: "1.21+",
         size: "6.5MB",
         modrinthUrl: "https://cdn.modrinth.com/data/1u6JkXh5/versions/oY3E2pzA/worldedit-mod-7.4.2.jar?mr_download_reason=standalone&mr_game_version=1.21.11&mr_loader=fabric"
     },
     {
         id: 16,
-        title: "ریسورس پک X-Ray (Spectator)",
+        title: "X-Ray (Spectator)",
         category: "ریسورس پک‌ها",
         desc: "دیدن سنگ‌های معدنی از پشت بلاک‌ها هنگام روح‌بازی (Spectator) - بدون تقلب در گیم‌پلی.",
-        longDesc: "این ریسورس پک فقط در حالت Spectator فعال می‌شود و امکان دیدن سنگ‌های معدنی از پشت بلاک‌ها را می‌دهد. مناسب برای پیدا کردن تقلب‌کننده‌ها در سرور یا تجربه بهتر در حالت‌هایی مثل UHC. هیچ مزیت ناعادلانه‌ای در حین بازی معمولی ایجاد نمی‌کند.",
+        longDesc: "مانند ماد فریکم به شما یک حالت اسپکتور میدهد که در سرور های ماینکرفت تقلب حساب نشه",
         image: "4ae5ff97cec3ed2c62f07ce0a4984b7fbc78c2d9_96.webp",
         downloads: 19,
         version: "1.21+",
@@ -986,10 +999,10 @@ let products = [
     },
     {
         id: 17,
-        title: "ریسورس پک Night Vision",
+        title: "Night Vision",
         category: "ریسورس پک‌ها",
         desc: "روشن‌تر کردن محیط در شب و غارها بدون نیاز به پوشن؛ دید بسیار بهتر در تاریکی.",
-        longDesc: "این ریسورس پک با استفاده از لایت‌مپ سفارشی، محیط شب و غارها را روشن‌تر می‌کند تا کاوش در تاریکی راحت‌تر شود. برای استفاده کامل نیاز به OptiFine یا Polytone دارد.",
+        longDesc: "بعد از زدن این ریسورس انگار که پوشن نایت ویژن را خورده اید و میتوانید تاریکی را روشن کنید",
         image: "848556b5af8de6012888fd9535fdc6f38b113a87_96.webp",
         downloads: 24,
         version: "1.21+",
@@ -998,10 +1011,10 @@ let products = [
     },
     {
         id: 18,
-        title: "ریسورس پک Low On Fire",
+        title: "Low On Fire",
         category: "ریسورس پک‌ها",
         desc: "کوچک کردن جلوه آتش روی صفحه هنگام آتش گرفتن، برای دید بهتر در نبرد و اکتشاف.",
-        longDesc: "وقتی آتش می‌گیرید، این پک به‌جای پوشاندن کل صفحه با شعله، فقط بخش کوچکی از تصویر را تحت تاثیر قرار می‌دهد. کاملاً وانیلا-فرندلی و بدون تاثیر روی مکانیزم آسیب آتش.",
+        longDesc: "کوچک کردن جلوه آتش روی صفحه هنگام آتش گرفتن، برای دید بهتر در نبرد و اکتشاف.",
         image: "06a7e7691a6da41798c255108a8563d7ffea171d.png",
         downloads: 31,
         version: "1.21+",
@@ -1016,7 +1029,7 @@ let products = [
         longDesc: "با این پلاگین هر وقتی که بازیکنی را در سرور بکشید، مبلغی به عنوان جایزه به حساب شما واریز می‌شود. قابل تنظیم بودن مقدار جایزه، پیام‌ها، و جلوگیری از فارم. مناسب برای سرورهای Survival و Prison.",
         image: "636261536687314965.png",   
         downloads: 2,
-        version: "Paper/Spigot 1.21+",
+        version: "1.21+",
         size: "1.4MB",
         price: 12000,
         isPaid: true
@@ -1030,11 +1043,25 @@ let products = [
         longDesc: "پلاگین قدرتمند ارسال پیام‌های خودکار در فاصله‌های زمانی دلخواه. پشتیبانی از رنگ، placeholder، چند خطی، و گروه‌بندی پیام‌ها. بهترین ابزار برای اطلاع‌رسانی قوانین، تخفیف‌ها، اخبار و ... در سرور.",
         image: "112363.jpg",   
         downloads: 6,
-        version: "Paper/Spigot 1.21+",
+        version: "1.21+",
         size: "1.1MB",
         price: 14000,
         isPaid: true
-    }
+    },
+
+    {
+        id: 21,
+        title: "مپ قلعه کوچیک",
+        category: "مپ‌ها",
+        desc: "یه قلعه کوچیک مناسب لابی سرور ها",
+        longDesc: "مپ قلعه کوچیک مناسب لابی برای سرور های ماینکرفت",
+        image: "middle-ages-small-lobby-51589-image-04.webp",
+        downloads: 9,
+        version: "1.21.7",
+        size: "3MB",
+         modrinthUrl: "https://uploadkon.ir/uploads/bc3315_26Middle-Ages-Small-Lobby.zip" 
+    },
+    
 ]
         
         let currentFilter = 'همه'
@@ -1065,12 +1092,98 @@ let products = [
             if (countEl) countEl.textContent = cart.length
         }
         
-        // Render products
+        // ===== Pagination state =====
+        const PRODUCTS_PAGE_SIZE = 6
+        let currentFilteredList = []
+        let visibleProductsCount = PRODUCTS_PAGE_SIZE
+
+                // Build a single product card's HTML
+        function buildProductCardHTML(product) {
+            const isInCart = cart.some(item => item.id === product.id)
+            const inWishlist = isInWishlist(product.id)
+
+            return `
+                <div onclick="showProductModal(${product.id})" class="product-card mc-card overflow-hidden cursor-pointer group">
+                    <div class="relative h-48 overflow-hidden bg-slate-100 border-b-4 border-black">
+                        <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        ${product.isPaid ? 
+                            `<div class="absolute top-4 right-4">
+                                <div class="mc-badge bg-red-500 text-white flex items-center gap-x-1.5 px-3.5 py-1 shadow">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                            </div>` : 
+                            `<div class="absolute top-4 right-4">
+                                <div class="mc-badge product-badge flex items-center gap-x-1.5 px-3.5 py-1 shadow">
+                                    <i class="fas fa-gift"></i>
+                                </div>
+                            </div>`
+                        }
+                        
+                        <!-- فقط دسته‌بندی - قلب حذف شد -->
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-white/90 text-slate-700 text-[10px] font-bold px-3 py-0.5 rounded-2xl shadow-sm">${product.category}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5">
+                        <h3 class="font-extrabold text-xl leading-tight mb-2 line-clamp-2 group-hover:text-emerald-700 transition-colors">${product.title}</h3>
+                        
+                        <p class="text-slate-600 text-sm line-clamp-2 mb-4 h-[42px]">${product.desc}</p>
+                        
+                        <div class="flex items-center justify-between text-xs mb-4">
+                            <div class="flex items-center gap-x-1.5 text-emerald-700 font-bold">
+                                <i class="fas fa-download"></i>
+                                <span class="font-bold">${(product.downloads / 1000).toFixed(0)}k دانلود</span>
+                            </div>
+                            <div class="text-slate-500 font-medium">${product.version}</div>
+                        </div>
+                        
+                        <div class="flex gap-2">
+                            ${product.isPaid ? 
+                                (isInCart ?
+                                    `<button onclick="event.stopImmediatePropagation(); quickDownload(${product.id})" 
+                                            class="mc-btn mc-btn-emerald flex-1 py-2.5 text-sm font-bold flex items-center justify-center gap-x-2">
+                                        <i class="fas fa-download"></i>
+                                        <span>دانلود</span>
+                                    </button>` :
+                                    `<button onclick="event.stopImmediatePropagation(); buyPaidProduct(${product.id})" 
+                                            class="mc-btn mc-btn-brown flex-1 py-2.5 text-sm font-bold flex items-center justify-center gap-x-2">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span>${product.price.toLocaleString('fa-IR')} تومان</span>
+                                    </button>`
+                                ) 
+                                :
+                                `<button onclick="event.stopImmediatePropagation(); addToCart(${product.id})" 
+                                        class="mc-btn ${isInCart ? 'mc-btn-emerald' : 'mc-btn-green'} flex-1 px-4 py-2.5 text-sm flex items-center justify-center gap-x-2">
+                                    <i class="fas ${isInCart ? 'fa-check' : 'fa-cart-plus'}"></i>
+                                    <span>${isInCart ? 'در سبد' : 'افزودن به سبد'}</span>
+                                </button>
+                                
+                                <button onclick="event.stopImmediatePropagation(); quickDownload(${product.id})" 
+                                        class="mc-btn mc-btn-brown px-4 py-2.5 text-sm flex items-center justify-center">
+                                    <i class="fas fa-download"></i>
+                                </button>`
+                            }
+                        </div>
+                    </div>
+                </div>
+            `
+        }
+
+        // Fresh render: called when the filter/search set changes. Resets pagination to the first page.
         function renderProducts(filteredProducts) {
+            currentFilteredList = filteredProducts
+            visibleProductsCount = PRODUCTS_PAGE_SIZE
+            renderVisibleProducts()
+        }
+
+        // Renders whatever is currently "visible" given the pagination state, without touching filters.
+        function renderVisibleProducts() {
             const grid = document.getElementById('products-grid')
             grid.innerHTML = ''
-            
-            if (filteredProducts.length === 0) {
+
+            if (currentFilteredList.length === 0) {
                 grid.innerHTML = `
                     <div class="col-span-full text-center py-12">
                         <i class="fas fa-search text-5xl text-slate-300 mb-4"></i>
@@ -1079,80 +1192,32 @@ let products = [
                 `
                 return
             }
-            
-            filteredProducts.forEach(product => {
-                const isInCart = cart.some(item => item.id === product.id)
-                
-                              const cardHTML = `
-                    <div onclick="showProductModal(${product.id})" class="product-card mc-card overflow-hidden cursor-pointer group">
-                        <div class="relative h-48 overflow-hidden bg-slate-100 border-b-4 border-black">
-                            <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            
-                            ${product.isPaid ? 
-                                `<div class="absolute top-4 right-4">
-                                    <div class="mc-badge bg-red-500 text-white flex items-center gap-x-1.5 px-3.5 py-1 shadow">
-                                        <i class="fas fa-lock"></i>
-                                        
-                                    </div>
-                                </div>` : 
-                                `<div class="absolute top-4 right-4">
-                                    <div class="mc-badge product-badge flex items-center gap-x-1.5 px-3.5 py-1 shadow">
-                                        <i class="fas fa-gift"></i>
-                                        
-                                    </div>
-                                </div>`
-                            }
-                            
-                            <div class="absolute top-4 left-4">
-                                <span class="bg-white/90 text-slate-700 text-[10px] font-bold px-3 py-0.5 rounded-2xl shadow-sm">${product.category}</span>
-                            </div>
-                        </div>
-                        
-                        <div class="p-5">
-                            <h3 class="font-extrabold text-xl leading-tight mb-2 line-clamp-2 group-hover:text-emerald-700 transition-colors">${product.title}</h3>
-                            
-                            <p class="text-slate-600 text-sm line-clamp-2 mb-4 h-[42px]">${product.desc}</p>
-                            
-                            <div class="flex items-center justify-between text-xs mb-4">
-                                <div class="flex items-center gap-x-1.5 text-emerald-700 font-bold">
-                                    <i class="fas fa-download"></i>
-                                    <span class="font-bold">${(product.downloads / 1000).toFixed(0)}k دانلود</span>
-                                </div>
-                                <div class="text-slate-500 font-medium">${product.version}</div>
-                            </div>
-                            
-                            <div class="flex gap-2">
-                                ${product.isPaid ? 
-                                    (isInCart ?
-                                        `<button onclick="event.stopImmediatePropagation(); quickDownload(${product.id})" 
-                                                class="mc-btn mc-btn-emerald flex-1 py-2.5 text-sm font-bold flex items-center justify-center gap-x-2">
-                                            <i class="fas fa-download"></i>
-                                            <span>دانلود</span>
-                                        </button>` :
-                                        `<button onclick="event.stopImmediatePropagation(); buyPaidProduct(${product.id})" 
-                                                class="mc-btn mc-btn-brown flex-1 py-2.5 text-sm font-bold flex items-center justify-center gap-x-2">
-                                            <i class="fas fa-shopping-bag"></i>
-                                            <span>${product.price.toLocaleString('fa-IR')} تومان</span>
-                                        </button>`
-                                    ) 
-                                    :
-                                    `<button onclick="event.stopImmediatePropagation(); addToCart(${product.id})" 
-                                            class="mc-btn ${isInCart ? 'mc-btn-emerald' : 'mc-btn-green'} flex-1 px-4 py-2.5 text-sm flex items-center justify-center gap-x-2">
-                                        <i class="fas ${isInCart ? 'fa-check' : 'fa-cart-plus'}"></i>
-                                        <span>${isInCart ? 'در سبد' : 'افزودن به سبد'}</span>
-                                    </button>
-                                    
-                                    <button onclick="event.stopImmediatePropagation(); quickDownload(${product.id})" 
-                                            class="mc-btn mc-btn-brown px-4 py-2.5 text-sm flex items-center justify-center">
-                                        <i class="fas fa-download"></i>
-                                    </button>`
-                                }
-                            </div>
-                        </div>
+
+            const visibleProducts = currentFilteredList.slice(0, visibleProductsCount)
+            grid.innerHTML = visibleProducts.map(buildProductCardHTML).join('')
+
+            const remaining = currentFilteredList.length - visibleProducts.length
+            if (remaining > 0) {
+                grid.insertAdjacentHTML('beforeend', `
+                    <div class="col-span-full flex justify-center mt-2">
+                        <button onclick="loadMoreProducts()" class="mc-btn mc-btn-green px-8 py-3 text-sm inline-flex items-center gap-x-2">
+                            <i class="fas fa-chevron-down"></i>
+                            <span>مشاهده محصولات بیشتر (${remaining} مورد دیگر)</span>
+                        </button>
                     </div>
-                `
-                grid.innerHTML += cardHTML
-            })
+                `)
+            }
+        }
+
+        // Reveals the next page of products without resetting scroll position or filters.
+        function loadMoreProducts() {
+            visibleProductsCount += PRODUCTS_PAGE_SIZE
+            renderVisibleProducts()
+        }
+
+        // Refreshes just the visible cards in place (e.g. after a wishlist toggle) — keeps current page & filter.
+        function refreshVisibleProductCards() {
+            renderVisibleProducts()
         }
         
         function filterProducts() {
@@ -1464,6 +1529,11 @@ let products = [
                                 <div class="inline-block px-4 py-1 bg-emerald-100 text-emerald-700 text-xs font-extrabold rounded-2xl mb-3">${product.category} • ${product.version}</div>
                                 <h2 class="text-3xl font-extrabold tracking-tight">${product.title}</h2>
                             </div>
+                            <button id="modal-wishlist-btn" onclick="toggleWishlist(${product.id})" data-wishlist-id="${product.id}"
+                                    aria-label="افزودن به علاقه‌مندی‌ها"
+                                    class="w-12 h-12 rounded-2xl bg-slate-50 hover:bg-rose-50 flex items-center justify-center flex-shrink-0 transition-colors ${isInWishlist(product.id) ? 'text-rose-500' : 'text-slate-400'}">
+                                <i class="${isInWishlist(product.id) ? 'fas' : 'far'} fa-heart text-xl"></i>
+                            </button>
                         </div>
                         
                         <div class="mt-6 text-slate-600 leading-relaxed text-[15px]">
@@ -1716,6 +1786,62 @@ let products = [
             return saved ? JSON.parse(saved) : []
         }
 
+        // Returns the logged-in user, or a shared "guest" identity so the wishlist still works before login
+        function getWishlistOwner() {
+            const userStr = localStorage.getItem('blockmarket_user')
+            return userStr ? JSON.parse(userStr) : { email: 'guest' }
+        }
+
+        function isInWishlist(productId) {
+            const wishlist = getWishlist(getWishlistOwner())
+            return wishlist.some(w => w.id === productId)
+        }
+
+        // Adds/removes a product from the current user's wishlist and keeps every open view in sync
+        function toggleWishlist(productId) {
+            const product = products.find(p => p.id === productId)
+            if (!product) return
+
+            const owner = getWishlistOwner()
+            const key = 'blockmarket_wishlist_' + owner.email
+            const wishlist = getWishlist(owner)
+            const idx = wishlist.findIndex(w => w.id === productId)
+            const wasInWishlist = idx > -1
+
+            if (wasInWishlist) {
+                wishlist.splice(idx, 1)
+            } else {
+                wishlist.push({ id: product.id, title: product.title, category: product.category })
+            }
+            localStorage.setItem(key, JSON.stringify(wishlist))
+
+            showToast(wasInWishlist
+                ? `«${product.title}» از علاقه‌مندی‌ها حذف شد.`
+                : `«${product.title}» به علاقه‌مندی‌ها اضافه شد.`)
+
+            // Sync heart icons on any visible product cards
+            if (typeof refreshVisibleProductCards === 'function') refreshVisibleProductCards()
+
+            // Sync the heart icon inside the open product modal, if this product is showing
+            const modalHeart = document.getElementById('modal-wishlist-btn')
+            if (modalHeart && modalHeart.dataset.wishlistId == String(productId)) {
+                const nowIn = !wasInWishlist
+                modalHeart.classList.toggle('text-rose-500', nowIn)
+                modalHeart.classList.toggle('text-slate-400', !nowIn)
+                const icon = modalHeart.querySelector('i')
+                if (icon) {
+                    icon.classList.toggle('fas', nowIn)
+                    icon.classList.toggle('far', !nowIn)
+                }
+            }
+
+            // Refresh the profile modal's wishlist tab if it's open
+            const profileModal = document.getElementById('profile-modal')
+            if (profileModal && !profileModal.classList.contains('hidden')) {
+                showProfileModal()
+            }
+        }
+
         function getAchievements(user) {
             return [
                 { name: 'اولین قدم', desc: 'اولین دانلود خود را انجام دهید', icon: 'fa-flag', unlocked: user.downloadsCount >= 1 },
@@ -1764,6 +1890,7 @@ let products = [
             const categoryIcon = (cat) => {
                 if (!cat) return 'fa-cube'
                 if (cat.includes('پلاگین')) return 'fa-plug'
+                if (cat.includes('مپ')) return 'fa-map-location-dot'
                 if (cat.includes('دیتا')) return 'fa-map'
                 return 'fa-cubes'
             }
@@ -1798,6 +1925,9 @@ let products = [
                         <div class="font-bold text-sm truncate">${w.title}</div>
                         <div class="text-xs text-slate-400">${w.category || ''}</div>
                     </div>
+                    <button onclick="toggleWishlist(${w.id})" title="حذف از علاقه‌مندی‌ها" class="text-xs font-bold text-slate-400 hover:text-rose-500 hover:bg-rose-50 px-3 py-2 rounded-xl flex-shrink-0">
+                        <i class="fas fa-trash"></i>
+                    </button>
                 </div>
             `).join('') : `
                 <div class="text-center py-10">
@@ -1983,11 +2113,21 @@ let products = [
                 </div>
             `
 
+            // Re-apply whichever tab was open before this render (e.g. stay on "wishlist" after removing an item)
+            if (activeProfileTab !== 'dashboard') {
+                const tabEl = content.querySelector(`.profile-tab[onclick*="'${activeProfileTab}'"]`)
+                if (tabEl) switchProfileTab(tabEl, activeProfileTab)
+            }
+
             modal.classList.remove('hidden')
             modal.classList.add('flex')
         }
 
+        let activeProfileTab = 'dashboard'
+
         function switchProfileTab(element, tab) {
+            activeProfileTab = tab
+
             document.querySelectorAll('.profile-tab').forEach(el => el.classList.remove('active', 'border-emerald-600', 'text-emerald-600'))
             document.querySelectorAll('.profile-tab').forEach(el => el.classList.add('text-slate-500'))
 
@@ -2223,7 +2363,7 @@ function buyPaidProduct(productId) {
                     <p class="text-3xl font-bold text-emerald-600 mt-3">${product.price.toLocaleString('fa-IR')} تومان</p>
                 </div>
                 
-                <p class="text-center text-slate-600 mb-6">برای خرید این پلاگین از کدام روش استفاده می‌کنید؟</p>
+                <p class="text-center text-slate-600 mb-6">برای خرید این محصول از کدام روش استفاده می‌کنید؟</p>
                 
                 <div class="space-y-3">
                     <button onclick="window.open('https://telegram.me/blockbazar1', '_blank'); confirmPaidPurchase(${product.id}); this.closest('#payment-modal').remove()" 
